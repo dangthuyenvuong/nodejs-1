@@ -1,0 +1,82 @@
+// header
+header.w3l-header
+    // /nav
+    nav.navbar.navbar-expand-lg.navbar-light.fill.px-lg-0.py-0.px-3
+        .container
+            a.navbar-brand(href='/')
+                span.fa.fa-pencil-square-o
+                |  Design Blog
+            //
+                if logo is image enable this
+                <a class="navbar-brand" href="#/">
+                <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+                </a>
+            button.navbar-toggler.collapsed(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                // <span class="navbar-toggler-icon"></span>
+                span.fa.icon-expand.fa-bars
+                span.fa.icon-close.fa-times
+            #navbarSupportedContent.collapse.navbar-collapse
+                ul.navbar-nav.ml-auto
+                    li.nav-item.active
+                        a.nav-link(href='/') Home
+                    li.nav-item.dropdown(class='@@category__active')
+                        a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                            | Categories 
+                            span.fa.fa-angle-down
+                        .dropdown-menu(aria-labelledby='navbarDropdown')
+                            a.dropdown-item(class='@@ls__active' href='category') Lifestyle posts
+                            a.dropdown-item(class='@@cp__active' href='culture.html') Culture posts
+                            a.dropdown-item(class='@@su__active' href='startup.html') Startup posts
+                    li.nav-item.dropdown(class='@@blog__active')
+                        a#navbarDropdown1.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                            | Blog 
+                            span.fa.fa-angle-down
+                        .dropdown-menu(aria-labelledby='navbarDropdown1')
+                            a.dropdown-item(class='@@fp__active' href='blog.html') Featured posts
+                            a.dropdown-item(class='@@sp__active' href='detail')
+                                | Standard single
+                                | post
+                            a.dropdown-item(class='@@vp__active' href='single.html') Video single post
+                    li.nav-item.dropdown(class='@@author__active')
+                        a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                            | More 
+                            span.fa.fa-angle-down
+                        .dropdown-menu(aria-labelledby='navbarDropdown')
+                            a.dropdown-item(class='@@ap__active' href='author.html') Author page
+                            a.dropdown-item(class='@@sr__active' href='search-results.html') Search results
+                            a.dropdown-item(class='@@404__active' href='404.html') 404 page
+                    li.nav-item(class='@@contact__active')
+                        a.nav-link(href='contact') Contact
+                // /search-right
+                .search-right.mt-lg-0.mt-2
+                    a(href='#search' title='search')
+                        span.fa.fa-search(aria-hidden='true')
+                    // search popup
+                    #search.pop-overlay
+                        .popup
+                            h3.hny-title.two Search here
+                            form.search-box(action='search-results.html' method='Get')
+                                input(type='search' placeholder='Search for blog posts' name='search' required='required' autofocus='')
+                                button.btn(type='submit') Search
+                            a.close(href='#close') &times;
+                    // /search popup
+                    // //search-right
+                .header-author.d-flex.ml-lg-4.pl-2.mt-lg-0.mt-3
+                    a.img-circle.img-circle-sm(href='author.html')
+                        img.img-fluid(src='/assets/images/author.jpg' alt='...')
+                    .align-self.ml-3
+                        a(href='author.html')
+                            h5 Alexander
+                        span Blog Writer
+            // toggle switch for light and dark theme
+            .mobile-position
+                nav.navigation
+                    .theme-switch-wrapper
+                        label.theme-switch(for='checkbox')
+                            input#checkbox(type='checkbox')
+                            .mode-container
+                                i.gg-sun
+                                i.gg-moon
+            // //toggle switch for light and dark theme
+            // //nav
+// //header

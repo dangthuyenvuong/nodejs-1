@@ -1,0 +1,357 @@
+extends ../layout/master
+
+block content
+    nav#breadcrumbs.breadcrumbs
+        .container.page-wrapper
+            a(href='index.html') Home
+            |  / More / 
+            span.breadcrumb_last(aria-current='page') Author
+    // author section
+    section#author.w3l-author.py-5
+        .container.py-md-3
+            .row.align-items-center
+                .col-md-3.col-sm-4.col-7.order-first
+                    div
+                        img.rounded-circle.img-fluid(src='/assets/images/author.jpg' alt='')
+                .col-md-9.col-sm-12.order-md-first.mt-lg-0.mt-4
+                    span.category Writing is all my life
+                    h1.mb-4.title
+                        | Hello, 
+                        span.typed-text
+                        span.cursor &nbsp;
+                    p
+                        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, excepturi.
+                        | Distinctio accusantium fugit odit? Fugit ipsam. Lorem ipsum dolor sit amet consectetur
+                        | adipisicing
+                        | elit. Aspernatur at corporis omnis sapiente deleniti atque ea maxime consequatur optio
+                        | perspiciatis.
+                    ul.author-icons.mt-4
+                        li
+                            a.facebook(href='#url')
+                                span.fa.fa-facebook(aria-hidden='true')
+                        li
+                            a.twitter(href='#url')
+                                span.fa.fa-twitter(aria-hidden='true')
+                        li
+                            a.google(href='#url')
+                                span.fa.fa-google-plus(aria-hidden='true')
+                        li
+                            a.linkedin(href='#url')
+                                span.fa.fa-linkedin(aria-hidden='true')
+                        li
+                            a.github(href='#url')
+                                span.fa.fa-github(aria-hidden='true')
+                        li
+                            a.dribbble(href='#url')
+                                span.fa.fa-dribbble(aria-hidden='true')
+    // //author section
+    .display-ad(style='margin: 8px auto; display: block; text-align:center;')
+        // -728x90-
+    .w3l-authorblock2.w3l-homeblock1.mb-5.pb-5
+        .container
+            // block
+            .item.mt-4
+                h3.section-title-left Posted by Alexander Ronald 
+                .row
+                    .col-md-6
+                        .list-view.list-view1
+                            .grids5-info
+                                a.d-block.zoom(href='blog-single.html')
+                                    img.img-fluid.radius-image.news-image(src='/assets/images/17.jpg' alt='')
+                                .blog-info.align-self
+                                    span.category Technology
+                                    a.blog-desc1(href='blog-single.html')
+                                        | Edit/proofread your post, and fix
+                                        | your
+                                        | formatting.
+                                    .author.align-items-center.mt-3.mb-1
+                                        a(href='author.html') Johnson smith
+                                        |  in 
+                                        a(href='#url') Design
+                                    ul.blog-meta
+                                        li.meta-item.blog-lesson
+                                            span.meta-value  April 13, 2020 
+                                        li.meta-item.blog-students
+                                            span.meta-value  6min read
+                            .grids5-info.mt-5
+                                a.d-block.zoom(href='blog-single.html')
+                                    img.img-fluid.radius-image.news-image(src='/assets/images/19.jpg' alt='')
+                                .blog-info.align-self
+                                    span.category Startups
+                                    a.blog-desc1(href='blog-single.html')
+                                        | The Beginner&apos;s Guide to Starting a
+                                        | Successful Blog in 2020
+                                    .author.align-items-center.mt-3.mb-1
+                                        a(href='author.html') Johnson smith
+                                        |  in 
+                                        a(href='#url') Design
+                                    ul.blog-meta
+                                        li.meta-item.blog-lesson
+                                            span.meta-value  April 13, 2020 
+                                        li.meta-item.blog-students
+                                            span.meta-value  6min read
+                    .col-md-6.mt-md-0.mt-5
+                        .list-view.list-view1
+                            .grids5-info
+                                a.d-block.zoom(href='blog-single.html')
+                                    img.img-fluid.radius-image.news-image(src='/assets/images/18.jpg' alt='')
+                                .blog-info.align-self
+                                    span.category Culture
+                                    a.blog-desc1(href='blog-single.html')
+                                        | Home to Organize your content in
+                                        | an
+                                        | outline.
+                                    .author.align-items-center.mt-3.mb-1
+                                        a(href='author.html') Johnson smith
+                                        |  in 
+                                        a(href='#url') Design
+                                    ul.blog-meta
+                                        li.meta-item.blog-lesson
+                                            span.meta-value  April 13, 2020 
+                                        li.meta-item.blog-students
+                                            span.meta-value  6min read
+                            .grids5-info.mt-5
+                                a.d-block.zoom(href='blog-single.html')
+                                    img.img-fluid.radius-image.news-image(src='/assets/images/20.jpg' alt='')
+                                .blog-info.align-self
+                                    span.category Design
+                                    a.blog-desc1(href='blog-single.html')
+                                        | 10 Fresh Ways to Get Better
+                                        | Results
+                                        | From
+                                        | Your Blog Posts
+                                    .author.align-items-center.mt-3.mb-1
+                                        a(href='author.html') Johnson smith
+                                        |  in 
+                                        a(href='#url') Design
+                                    ul.blog-meta
+                                        li.meta-item.blog-lesson
+                                            span.meta-value  April 13, 2020 
+                                        li.meta-item.blog-students
+                                            span.meta-value  6min read
+                // block
+                .row.mt-5.pt-md-5.img-block-mobile
+                    .col-lg-9.most-recent
+                        h3.section-title-left Most Recent posts 
+                        .list-view
+                            .grids5-info
+                                .blog-info
+                                    span.category Technology
+                                    a.blog-desc.mt-0(href='blog-single.html')
+                                        | Curated Collection Post : 8
+                                        | Examples
+                                        | of Evolution in Action
+                                    p
+                                        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur
+                                        | accusamus
+                                        | voluptas. Mollitia, natus ipsam maiores placeat elit.
+                                    .author.align-items-center.mt-3.mb-1
+                                        a(href='author.html') Johnson smith
+                                        |  in 
+                                        a(href='#url') Design
+                                    ul.blog-meta
+                                        li.meta-item.blog-lesson
+                                            span.meta-value  April 13, 2020 
+                                        li.meta-item.blog-students
+                                            span.meta-value  6min read
+                                a.d-block.zoom(href='blog-single.html')
+                                    img.img-fluid.radius-image.news-image.mt-md-0.mt-3(src='/assets/images/16.jpg' alt='')
+                            .grids5-info.mt-5
+                                .blog-info
+                                    span.category Based on your reading history
+                                    a.blog-desc.mt-0(href='blog-single.html')
+                                        | The Key Benefits of Studying
+                                        | Online
+                                        | [Infographic]
+                                    p
+                                        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur
+                                        | accusamus
+                                        | voluptas. Mollitia, natus ipsam maiores beatae elit.
+                                    .author.align-items-center.mt-3.mb-1
+                                        a(href='author.html') Johnson smith
+                                        |  in 
+                                        a(href='#url') Design
+                                    ul.blog-meta
+                                        li.meta-item.blog-lesson
+                                            span.meta-value  April 13, 2020 
+                                        li.meta-item.blog-students
+                                            span.meta-value  6min read
+                                a.d-block.zoom(href='blog-single.html')
+                                    img.img-fluid.radius-image.news-image.mt-md-0.mt-3(src='/assets/images/17.jpg' alt='')
+                            .grids5-info.mt-5
+                                .blog-info
+                                    span.category Sports and Fitness
+                                    a.blog-desc.mt-0(href='blog-single.html')
+                                        | Ivy Goes Mobile With New App
+                                        | for
+                                        | Designers
+                                    p
+                                        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur
+                                        | accusamus
+                                        | voluptas. Mollitia, natus ipsam maiores beatae elit.
+                                    .author.align-items-center.mt-3.mb-1
+                                        a(href='author.html') Johnson smith
+                                        |  in 
+                                        a(href='#url') Design
+                                    ul.blog-meta
+                                        li.meta-item.blog-lesson
+                                            span.meta-value  April 13, 2020 
+                                        li.meta-item.blog-students
+                                            span.meta-value  6min read
+                                a.d-block.zoom(href='blog-single.html')
+                                    img.img-fluid.radius-image.news-image.mt-md-0.mt-3(src='/assets/images/20.jpg' alt='')
+                            .grids5-info.mt-5
+                                .blog-info
+                                    span.category Health and Food 
+                                    a.blog-desc.mt-0(href='blog-single.html')
+                                        | What I Wish I Had Known Before
+                                        | Writing
+                                        | My First Book
+                                    p
+                                        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur
+                                        | accusamus
+                                        | voluptas. Mollitia, natus ipsam maiores beatae elit.
+                                    .author.align-items-center.mt-3.mb-1
+                                        a(href='author.html') Johnson smith
+                                        |  in 
+                                        a(href='#url') Design
+                                    ul.blog-meta
+                                        li.meta-item.blog-lesson
+                                            span.meta-value  April 13, 2020 
+                                        li.meta-item.blog-students
+                                            span.meta-value  6min read
+                                a.d-block.zoom(href='blog-single.html')
+                                    img.img-fluid.radius-image.news-image.mt-md-0.mt-3(src='/assets/images/18.jpg' alt='')
+                        // pagination
+                        .pagination-wrapper.mt-5
+                            ul.page-pagination
+                                li
+                                    span.page-numbers.current(aria-current='page') 1
+                                li
+                                    a.page-numbers(href='#url') 2
+                                li
+                                    a.page-numbers(href='#url') 3
+                                li
+                                    a.page-numbers(href='#url') 4
+                                li
+                                    a.page-numbers(href='#url') ....
+                                li
+                                    a.page-numbers(href='#url') 15
+                                li
+                                    a.next(href='#url')
+                                        span.fa.fa-angle-right
+                        // //pagination
+                    .col-lg-3.trending.mb-5.mt-lg-0.mt-5
+                        .pos-sticky
+                            h3.section-title-left Trending 
+                            .grids5-info
+                                h4 01.
+                                .blog-info
+                                    a.blog-desc1(href='blog-single.html')
+                                        | 10 Fresh Ways to Get Better
+                                        | Results
+                                        | From
+                                        | Your Blog Posts
+                                    .author.align-items-center.mt-2.mb-1
+                                        a(href='author.html') Johnson smith
+                                        |  in 
+                                        a(href='#url') Design
+                                    ul.blog-meta
+                                        li.meta-item.blog-lesson
+                                            span.meta-value  April 13, 2020 
+                                        li.meta-item.blog-students
+                                            span.meta-value  6min read
+                            .grids5-info
+                                h4 02.
+                                .blog-info
+                                    a.blog-desc1(href='blog-single.html')
+                                        | How to Optimize for on-page SEO.
+                                    .author.align-items-center.mt-2.mb-1
+                                        a(href='author.html') Johnson smith
+                                        |  in 
+                                        a(href='#url') Design
+                                    ul.blog-meta
+                                        li.meta-item.blog-lesson
+                                            span.meta-value  April 13, 2020 
+                                        li.meta-item.blog-students
+                                            span.meta-value  6min read
+                            .grids5-info
+                                h4 03.
+                                .blog-info
+                                    a.blog-desc1(href='blog-single.html')
+                                        | What to Post on the Instagram
+                                    .author.align-items-center.mt-2.mb-1
+                                        a(href='author.html') Johnson smith
+                                        |  in 
+                                        a(href='#url') Design
+                                    ul.blog-meta
+                                        li.meta-item.blog-lesson
+                                            span.meta-value  April 13, 2020 
+                                        li.meta-item.blog-students
+                                            span.meta-value  6min read
+                            .grids5-info
+                                h4 04.
+                                .blog-info
+                                    a.blog-desc1(href='blog-single.html')
+                                        | 18 Photo &amp; Video Ideas to Spark
+                                        | Inspiration
+                                    .author.align-items-center.mt-3.mb-1
+                                        a(href='author.html') Johnson smith
+                                        |  in 
+                                        a(href='#url') Design
+                                    ul.blog-meta
+                                        li.meta-item.blog-lesson
+                                            span.meta-value  April 13, 2020 
+                                        li.meta-item.blog-students
+                                            span.meta-value  6min read
+                // //block
+                // ad block
+                .ad-block.text-center.mt-5
+                    a(href='#url')
+                        img.img-fluid(src='/assets/images/ad.gif' alt='ad image')
+                // //ad block
+                // //block
+
+
+block js
+    // /typig-text
+    script.
+        const typedTextSpan = document.querySelector(".typed-text");
+        const cursorSpan = document.querySelector(".cursor");
+        const textArray = ["I'm Alexander Ronald.", "Writing is all my Life.", "I Love to write Blog posts!"];
+        const typingDelay = 200;
+        const erasingDelay = 10;
+        const newTextDelay = 100; // Delay between current and next text
+        let textArrayIndex = 0;
+        let charIndex = 0;
+        function type() {
+        if (charIndex < textArray[textArrayIndex].length) {
+        if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+        } else {
+        cursorSpan.classList.remove("typing");
+        setTimeout(erase, newTextDelay);
+        }
+        }
+        function erase() {
+        if (charIndex > 0) {
+        // add class 'typing' if there's none
+        if (!cursorSpan.classList.contains("typing")) {
+        cursorSpan.classList.add("typing");
+        }
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, 0);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+        } else {
+        cursorSpan.classList.remove("typing");
+        textArrayIndex++;
+        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+        setTimeout(type, typingDelay);
+        }
+        }
+        document.addEventListener("DOMContentLoaded", function () { // On DOM Load initiate the effect
+        if (textArray.length) setTimeout(type, newTextDelay + 250);
+        });
+    // //typig-text

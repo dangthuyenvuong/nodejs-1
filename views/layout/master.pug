@@ -1,0 +1,33 @@
+doctype html
+//
+    Author: W3layouts
+    Author URL: http://w3layouts.com
+head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    title
+        | Design Blog a Blog Category Bootstrap Responsive Website Template | Home : W3layouts
+    link(href='https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap' rel='stylesheet')
+    link(href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap' rel='stylesheet')
+    // Template CSS
+    link(rel='stylesheet' href='/assets/css/style-liberty.css')
+include header
+block content
+include footer
+// Template JavaScript
+script(src='/assets/js/theme-change.js')
+script(src='/assets/js/jquery-3.3.1.min.js')
+// //script for featured posts blog slider
+// disable body scroll which navbar is in active
+script.
+    $(function () {
+    $('.navbar-toggler').click(function () {
+    $('body').toggleClass('noscroll');
+    })
+    });
+// disable body scroll which navbar is in active
+script(src='/assets/js/bootstrap.min.js')
+
+
+block js

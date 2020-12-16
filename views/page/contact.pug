@@ -1,0 +1,56 @@
+extends ../layout/master
+block content
+    nav#breadcrumbs.breadcrumbs
+        .container.page-wrapper
+            a(href='index.html') Home
+            |  / 
+            span.breadcrumb_last(aria-current='page') Contact
+    // contact-form 2
+    section.w3l-contact-2.py-5
+        .container.py-lg-5.py-md-4
+            h3.section-title-left Leave Us a message 
+            .contact-grids.d-grid
+                .contact-left
+                    h3.mb-3 Contact Details
+                    p
+                        | Everything start with a Hello! We&rsquo;re here to answer any questions you may have and create an effective
+                        | solution for your instructional needs.
+                    p
+                        | We have a dedicated support center for all of your support needs. We usually get back to you within 12-24
+                        | hours.
+                    .cont-details
+                        .cont-top.margin-up
+                            .cont-left.text-center
+                                span.fa.fa-map-marker
+                            .cont-right
+                                h6 Address
+                                p #135 block, Barnard St. Brooklyn, NY 10036, USA
+                        .cont-top.margin-up
+                            .cont-left.text-center
+                                span.fa.fa-phone
+                            .cont-right
+                                h6 Call Us
+                                p
+                                    a(href='tel:+(12)234-11-2446') +(12)234-11-2446
+                                    | , 
+                                    a.ml-2(href='tel:+(12)234-11-4455') +(12)234-11-4455
+                        .cont-top.margin-up
+                            .cont-left.text-center
+                                span.fa.fa-envelope-o
+                            .cont-right
+                                h6 Email Us
+                                p
+                                    a.mail(href='mailto:example@mail.com') example@mail.com
+                .contact-right
+                    form.signin-form(action='https://sendmail.w3layouts.com/submitForm' method='post')
+                        .input-grids
+                            input#w3lName.contact-input(type='text' name='w3lName' placeholder='Your Name*' required='')
+                            input#w3lSender.contact-input(type='email' name='w3lSender' placeholder='Your Email*' required='')
+                            input#w3lSubect.contact-input(type='text' name='w3lSubect' placeholder='Subject*' required='')
+                        .form-input
+                            textarea#w3lMessage(name='w3lMessage' placeholder='Type your message here*' required='')
+                        button.btn.btn-style.btn-outline Send Message
+    // /contact-form-2
+
+
+

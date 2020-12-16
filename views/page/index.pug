@@ -1,0 +1,434 @@
+extends ../layout/master
+
+block content
+  .w3l-homeblock1.py-5
+    .container.pt-lg-5.pt-md-4
+      // block
+      .row
+        .col-lg-9
+          h3.section-title-left Featured posts 
+          .row
+            if featured1
+              .col-lg-5.col-md-6.item
+                .card
+                  .card-header.p-0.position-relative
+                    a(href='blog-single.html')
+                      img.card-img-bottom.d-block.radius-image(src=featured1.cover alt='Card image cap')
+                  .card-body.p-0.blog-details
+                    a.blog-desc(href='blog-single.html')
+                      | #{featured1.title}
+                    p
+                      | #{featured1.short_description}
+                    .author.align-items-center.mt-3.mb-1
+                      a(href='author.html') #{featured1.author}
+                      |  in 
+                      a(href='#url') #{featured1.category}
+                    ul.blog-meta
+                      li.meta-item.blog-lesson
+                        span.meta-value  April 13, 2020 
+                      li.meta-item.blog-students
+                        span.meta-value  #{featured1.time_read} min read
+                    a.btn.btn-style.btn-outline.mt-4(href='blog.html')
+                      | All featured
+                      | posts
+            .col-lg-7.col-md-6.mt-md-0.mt-5
+              .list-view.list-view1
+
+                each item, index in featured
+                  .grids5-info(class=index > 0 ? 'mt-5': '')
+                    a.d-block.zoom(href='blog-single.html')
+                      img.img-fluid.radius-image.news-image(src=item.cover alt='')
+                    .blog-info.align-self
+                      a.blog-desc1(href='blog-single.html')
+                        | #{item.title}
+                      .author.align-items-center.mt-3.mb-1
+                        a(href='author.html') #{item.author}
+                        |  in 
+                        a(href='#url') #{item.category}
+                      ul.blog-meta
+                        li.meta-item.blog-lesson
+                          span.meta-value  April 13, 2020 
+                        li.meta-item.blog-students
+                          span.meta-value  #{item.time_read} min read
+        .col-lg-3.trending.mt-lg-0.mt-5
+          h3.section-title-left Trending 
+          each item, index in trending
+            .grids5-info
+              h4 0#{index + 1}.
+              .blog-info
+                a.blog-desc1(href='blog-single.html')
+                  | #{item.title}
+                .author.align-items-center.mt-2.mb-1
+                  a(href='author.html') #{item.author}
+                  |  in 
+                  a(href='#url') #{item.category}
+                ul.blog-meta
+                  li.meta-item.blog-lesson
+                    span.meta-value  April 13, 2020 
+                  li.meta-item.blog-students
+                    span.meta-value  #{item.time_read} min read
+
+      // //block
+      // block
+      if highlight1
+        .item.mt-5.pt-4
+          .row
+            .col-lg-6
+              a(href='blog-single.html')
+                img.card-img-bottom.d-block.radius-image(src=highlight1.cover alt='Card image cap')
+            .col-lg-6.blog-details.align-self.mt-lg-0.mt-sm-5.mt-4
+              a.blog-desc-big(href='blog-single.html')
+                | #{highlight1.title}
+              p #{highlight1.short_description}
+              .author.align-items-center.mt-4.mb-1
+                a(href='author.html') #{highlight1.author}
+                |  in 
+                a(href='#url') #{highlight1.category}
+              ul.blog-meta
+                li.meta-item.blog-lesson
+                  span.meta-value  April 13, 2020 
+                li.meta-item.blog-students
+                  span.meta-value  #{highlight1.time_read} min read
+      // //block
+      // block
+      .item.mt-5.pt-lg-5
+        h3.section-title-left Today Highlights 
+        .row
+          .col-lg-5.col-md-6
+            .list-view.list-view1
+              .grids5-info
+                a.d-block.zoom(href='blog-single.html')
+                  img.img-fluid.radius-image.news-image(src='/assets/images/4.jpg' alt='')
+                .blog-info.align-self
+                  a.blog-desc1(href='blog-single.html')
+                    | Edit/proofread your post, and fix
+                    | your formatting.
+                  .author.align-items-center.mt-3.mb-1
+                    a(href='author.html') Johnson smith
+                    |  in 
+                    a(href='#url') Design
+                  ul.blog-meta
+                    li.meta-item.blog-lesson
+                      span.meta-value  April 13, 2020 
+                    li.meta-item.blog-students
+                      span.meta-value  6min read
+              .grids5-info.mt-5
+                a.d-block.zoom(href='blog-single.html')
+                  img.img-fluid.radius-image.news-image(src='/assets/images/5.jpg' alt='')
+                .blog-info.align-self
+                  a.blog-desc1(href='blog-single.html')
+                    | The Beginner&apos;s Guide to Starting a
+                    | Successful Blog in 2020
+                  .author.align-items-center.mt-3.mb-1
+                    a(href='author.html') Johnson smith
+                    |  in 
+                    a(href='#url') Design
+                  ul.blog-meta
+                    li.meta-item.blog-lesson
+                      span.meta-value  April 13, 2020 
+                    li.meta-item.blog-students
+                      span.meta-value  6min read
+          .col-lg-5.col-md-6.mt-md-0.mt-5
+            .list-view.list-view1
+              .grids5-info
+                a.d-block.zoom(href='blog-single.html')
+                  img.img-fluid.radius-image.news-image(src='/assets/images/6.jpg' alt='')
+                .blog-info.align-self
+                  a.blog-desc1(href='blog-single.html')
+                    | Home to Organize your content in
+                    | an outline.
+                  .author.align-items-center.mt-3.mb-1
+                    a(href='author.html') Johnson smith
+                    |  in 
+                    a(href='#url') Design
+                  ul.blog-meta
+                    li.meta-item.blog-lesson
+                      span.meta-value  April 13, 2020 
+                    li.meta-item.blog-students
+                      span.meta-value  6min read
+              .grids5-info.mt-5
+                a.d-block.zoom(href='blog-single.html')
+                  img.img-fluid.radius-image.news-image(src='/assets/images/7.jpg' alt='')
+                .blog-info.align-self
+                  a.blog-desc1(href='blog-single.html')
+                    | 10 Fresh Ways to Get Better
+                    | Results From Your Blog Posts
+                  .author.align-items-center.mt-3.mb-1
+                    a(href='author.html') Johnson smith
+                    |  in 
+                    a(href='#url') Design
+                  ul.blog-meta
+                    li.meta-item.blog-lesson
+                      span.meta-value  April 13, 2020 
+                    li.meta-item.blog-students
+                      span.meta-value  6min read
+          .col-lg-2.col-sm-6.mt-lg-0.mt-5
+            .ad-img
+              a(href='#ad-img')
+                img.img-fluid(src='/assets/images/ad1.jpg' alt='ad image')
+      // //block
+      // block
+      .row.mt-5.pt-5
+        .col-lg-9.most-recent
+          h3.section-title-left Most Recent posts 
+          .list-view
+            .grids5-info.img-block-mobile
+              .blog-info.align-self
+                span.category Technology
+                a.blog-desc.mt-0(href='blog-single.html')
+                  | Curated Collection Post : 8
+                  | Examples of Evolution in Action
+                p
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur
+                  | accusamus
+                  | voluptas. Mollitia, natus ipsam maiores placeat elit.
+                .author.align-items-center.mt-3.mb-1
+                  a(href='author.html') Johnson smith
+                  |  in 
+                  a(href='#url') Design
+                ul.blog-meta
+                  li.meta-item.blog-lesson
+                    span.meta-value  April 13, 2020 
+                  li.meta-item.blog-students
+                    span.meta-value  6min read
+              a.d-block.zoom.mt-md-0.mt-3(href='blog-single.html')
+                img.img-fluid.radius-image.news-image(src='/assets/images/8.jpg' alt='')
+            .grids5-info.img-block-mobile.mt-5
+              .blog-info.align-self
+                span.category Based on your reading history
+                a.blog-desc.mt-0(href='blog-single.html')
+                  | The Key Benefits of Studying
+                  | Online [Infographic]
+                p
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur
+                  | accusamus
+                  | voluptas. Mollitia, natus ipsam maiores beatae elit.
+                .author.align-items-center.mt-3.mb-1
+                  a(href='author.html') Johnson smith
+                  |  in 
+                  a(href='#url') Design
+                ul.blog-meta
+                  li.meta-item.blog-lesson
+                    span.meta-value  April 13, 2020 
+                  li.meta-item.blog-students
+                    span.meta-value  6min read
+              a.d-block.zoom.mt-md-0.mt-3(href='blog-single.html')
+                img.img-fluid.radius-image.news-image(src='/assets/images/9.jpg' alt='')
+            .grids5-info.img-block-mobile.mt-5
+              .blog-info.align-self
+                span.category Culture
+                a.blog-desc.mt-0(href='blog-single.html')
+                  | How to Write a Blog Post: A
+                  | Step-by-Step Guide
+                p
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur
+                  | accusamus
+                  | voluptas. Mollitia, natus ipsam maiores beatae elit.
+                .author.align-items-center.mt-3.mb-1
+                  a(href='author.html') Johnson smith
+                  |  in 
+                  a(href='#url') Design
+                ul.blog-meta
+                  li.meta-item.blog-lesson
+                    span.meta-value  April 13, 2020 
+                  li.meta-item.blog-students
+                    span.meta-value  6min read
+              a.d-block.zoom.mt-md-0.mt-3(href='blog-single.html')
+                img.img-fluid.radius-image.news-image(src='/assets/images/16.jpg' alt='')
+            .row.most-recent-inner.my-5.py-lg-4
+              .col-md-6
+                .list-view.list-view1
+                  .grids5-info
+                    a.d-block.zoom(href='blog-single.html')
+                      img.img-fluid.radius-image.news-image(src='/assets/images/10.jpg' alt='')
+                    .blog-info.align-self
+                      a.blog-desc1(href='blog-single.html')
+                        | Home to write High-Level
+                        | blog posts
+                      .author.align-items-center.mt-3.mb-1
+                        a(href='author.html') Johnson smith
+                        |  in 
+                        a(href='#url') Design
+                      ul.blog-meta
+                        li.meta-item.blog-lesson
+                          span.meta-value  April 13, 2020 
+                        li.meta-item.blog-students
+                          span.meta-value  6min read
+                  .grids5-info.mt-5
+                    a.d-block.zoom(href='blog-single.html')
+                      img.img-fluid.radius-image.news-image(src='/assets/images/11.jpg' alt='')
+                    .blog-info.align-self
+                      a.blog-desc1(href='blog-single.html')
+                        | 9 Reasons why your Blog
+                        | posts are Hard to Read
+                      .author.align-items-center.mt-3.mb-1
+                        a(href='author.html') Johnson smith
+                        |  in 
+                        a(href='#url') Design
+                      ul.blog-meta
+                        li.meta-item.blog-lesson
+                          span.meta-value  April 13, 2020 
+                        li.meta-item.blog-students
+                          span.meta-value  6min read
+              .col-md-6.mt-md-0.mt-5
+                .list-view.list-view1
+                  .grids5-info
+                    a.d-block.zoom(href='blog-single.html')
+                      img.img-fluid.radius-image.news-image(src='/assets/images/12.jpg' alt='')
+                    .blog-info.align-self
+                      a.blog-desc1(href='blog-single.html')
+                        | How to run a Blog lead
+                        | generation Analysis
+                      .author.align-items-center.mt-3.mb-1
+                        a(href='author.html') Johnson smith
+                        |  in 
+                        a(href='#url') Design
+                      ul.blog-meta
+                        li.meta-item.blog-lesson
+                          span.meta-value  April 13, 2020 
+                        li.meta-item.blog-students
+                          span.meta-value  6min read
+                  .grids5-info.mt-5
+                    a.d-block.zoom(href='blog-single.html')
+                      img.img-fluid.radius-image.news-image(src='/assets/images/13.jpg' alt='')
+                    .blog-info.align-self
+                      a.blog-desc1(href='blog-single.html')
+                        | The Anatomy of a perfect
+                        | Blog post
+                      .author.align-items-center.mt-3.mb-1
+                        a(href='author.html') Johnson smith
+                        |  in 
+                        a(href='#url') Design
+                      ul.blog-meta
+                        li.meta-item.blog-lesson
+                          span.meta-value  April 13, 2020 
+                        li.meta-item.blog-students
+                          span.meta-value  6min read
+            .grids5-info.img-block-mobile.mt-5
+              .blog-info.align-self
+                span.category Sports and Fitness
+                a.blog-desc.mt-0(href='blog-single.html')
+                  | Ivy Goes Mobile With New App for
+                  | Designers
+                p
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur
+                  | accusamus
+                  | voluptas. Mollitia, natus ipsam maiores beatae elit.
+                .author.align-items-center.mt-3.mb-1
+                  a(href='author.html') Johnson smith
+                  |  in 
+                  a(href='#url') Design
+                ul.blog-meta
+                  li.meta-item.blog-lesson
+                    span.meta-value  April 13, 2020 
+                  li.meta-item.blog-students
+                    span.meta-value  6min read
+              a.d-block.zoom.mt-md-0.mt-3(href='blog-single.html')
+                img.img-fluid.radius-image.news-image(src='/assets/images/14.jpg' alt='')
+            .grids5-info.img-block-mobile.mt-5
+              .blog-info.align-self
+                span.category Health and Food 
+                a.blog-desc.mt-0(href='blog-single.html')
+                  | What I Wish I Had Known Before
+                  | Writing My First Book
+                p
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur
+                  | accusamus
+                  | voluptas. Mollitia, natus ipsam maiores beatae elit.
+                .author.align-items-center.mt-3.mb-1
+                  a(href='author.html') Johnson smith
+                  |  in 
+                  a(href='#url') Design
+                ul.blog-meta
+                  li.meta-item.blog-lesson
+                    span.meta-value  April 13, 2020 
+                  li.meta-item.blog-students
+                    span.meta-value  6min read
+              a.d-block.zoom.mt-md-0.mt-3(href='blog-single.html')
+                img.img-fluid.radius-image.news-image(src='/assets/images/15.jpg' alt='')
+          // pagination
+          .pagination-wrapper.mt-5
+            ul.page-pagination
+              li
+                span.page-numbers.current(aria-current='page') 1
+              li
+                a.page-numbers(href='#url') 2
+              li
+                a.page-numbers(href='#url') 3
+              li
+                a.page-numbers(href='#url') 4
+              li
+                a.page-numbers(href='#url') ....
+              li
+                a.page-numbers(href='#url') 15
+              li
+                a.next(href='#url')
+                  span.fa.fa-angle-right
+          // //pagination
+        .col-lg-3.trending.mt-lg-0.mt-5.mb-lg-5
+          .pos-sticky
+            h3.section-title-left Trending 
+            .grids5-info
+              h4 01.
+              .blog-info
+                a.blog-desc1(href='blog-single.html')
+                  | 10 Fresh Ways to Get Better Results
+                  | From Your Blog Posts
+                .author.align-items-center.mt-2.mb-1
+                  a(href='author.html') Johnson smith
+                  |  in 
+                  a(href='#url') Design
+                ul.blog-meta
+                  li.meta-item.blog-lesson
+                    span.meta-value  April 13, 2020 
+                  li.meta-item.blog-students
+                    span.meta-value  6min read
+            .grids5-info
+              h4 02.
+              .blog-info
+                a.blog-desc1(href='blog-single.html')
+                  | How to Optimize for on-page SEO.
+                .author.align-items-center.mt-2.mb-1
+                  a(href='author.html') Johnson smith
+                  |  in 
+                  a(href='#url') Design
+                ul.blog-meta
+                  li.meta-item.blog-lesson
+                    span.meta-value  April 13, 2020 
+                  li.meta-item.blog-students
+                    span.meta-value  6min read
+            .grids5-info
+              h4 03.
+              .blog-info
+                a.blog-desc1(href='blog-single.html')
+                  | What to Post on the Instagram
+                .author.align-items-center.mt-2.mb-1
+                  a(href='author.html') Johnson smith
+                  |  in 
+                  a(href='#url') Design
+                ul.blog-meta
+                  li.meta-item.blog-lesson
+                    span.meta-value  April 13, 2020 
+                  li.meta-item.blog-students
+                    span.meta-value  6min read
+            .grids5-info
+              h4 04.
+              .blog-info
+                a.blog-desc1(href='blog-single.html')
+                  | 18 Photo &amp; Video Ideas to Spark
+                  | Inspiration
+                .author.align-items-center.mt-3.mb-1
+                  a(href='author.html') Johnson smith
+                  |  in 
+                  a(href='#url') Design
+                ul.blog-meta
+                  li.meta-item.blog-lesson
+                    span.meta-value  April 13, 2020 
+                  li.meta-item.blog-students
+                    span.meta-value  6min read
+      // //block
+      // ad block
+      .ad-block.text-center.mt-5
+        a(href='#url')
+          img.img-fluid(src='/assets/images/ad.gif' alt='ad image')
+      // //ad block

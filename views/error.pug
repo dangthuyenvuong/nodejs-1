@@ -1,0 +1,22 @@
+extends layout/master
+
+block content
+  // error section
+  section#error.w3l-error.py-5
+    .container.py-md-4
+      .row.align-items-center
+        .col-md-5.col-7.mx-auto
+          img.rounded-circle.img-fluid(src='/assets/images/error.png' alt='')
+        .col-md-7.col-sm-12
+          h1.error-title 404
+          h2 Page Not Found
+          p.mt-3
+            | Sorry have error
+            pre #{error.stack}
+          a.btn.btn-style.btn-outline.mt-4(href='/')  Back to home
+  // //error section
+
+
+
+
+
