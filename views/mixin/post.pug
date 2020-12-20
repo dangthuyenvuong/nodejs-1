@@ -1,0 +1,19 @@
+mixin post(title, description, cover, author, category, published_at, time_read)
+    .card
+        .card-header.p-0.position-relative
+            a(href='#blog-single')
+                img.card-img-bottom.d-block.radius-image(src=cover alt='Card image cap')
+        .card-body.p-0.blog-details
+            a.blog-desc(href='#blog-single')
+                | #{title}
+            p
+                | #{description}
+            .author.align-items-center.mt-3.mb-1
+                a(href='#author') #{author}
+                |  in 
+                a(href='#url') #{category}
+            ul.blog-meta
+                li.meta-item.blog-lesson
+                    span.meta-value  #{published_at}
+                li.meta-item.blog-students
+                    span.meta-value  #{time_read}min read

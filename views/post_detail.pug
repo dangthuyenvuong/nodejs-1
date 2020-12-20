@@ -1,0 +1,49 @@
+extends layout/master
+include mixin/breadcrumb
+include mixin/index
+include mixin/helper
+
+block content
+    +breadcrumb([
+        {title: 'Home', link: '/'},
+        {title: 'Blog'},
+        {title: title},
+    ])
+    .py-5.w3l-homeblock1.text-center
+        .container.mt-md-3
+            h3.blog-desc-big.text-center.mb-4
+                | #{title}
+            .blog-post-align
+                .blog-post-img
+                    a(href='author.html')
+                        img.rounded-circle.img-fluid(src=author.avatar alt='')
+                .blog-post-info
+                    .author.align-items-center.mb-1
+                        a(href='author.html') #{author.name}
+                        |  in 
+                        a(href='#url') #{categories[0].title}
+                    ul.blog-meta
+                        li.meta-item.blog-lesson
+                            span.meta-value= convertTimeToDate(published_at)
+
+                        li.meta-item.blog-students
+                            span.meta-value  #{time_read}min read
+
+    section.blog-post-main.w3l-homeblock1
+        // /blog-post
+        .blog-content-inf.pb-5
+            .container.pb-lg-4
+                .single-post-image
+                    .post-content
+                        iframe.mb-5(src='https://www.youtube.com/embed/ZlbHdYMWSOA' frameborder='0' allowfullscreen='')
+                .single-post-content #{content}
+                // related posts
+                .item.mt-5.pt-lg-5
+                    h3.section-title-left Maybe You are Interested in 
+                    .row
+                        each item in highlight
+                            .col-md-6
+                                .list-view.list-view1
+                                    +highlight(item)
+                // //related posts
+                // //blog-post

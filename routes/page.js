@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path')
 const express = require('express');
 const pageController = require('../controllers/pageController');
+const app = require('../app');
 
 const router = express.Router();
 
@@ -19,7 +20,7 @@ router.get('/detail', (req, res, next) => {
 })
 
 
-router.get('/:page?/:level1?', (req, res, next) => {
+router.get('/:page?/:level1?', async (req, res, next) => {
 
     let { page, level1 } = req.params;
 
@@ -39,7 +40,7 @@ router.get('/:page?/:level1?', (req, res, next) => {
 
     let data = {};
     if (pageNameController in pageController) {
-        data = pageController[pageNameController]();
+        data = await pageController[pageNameController]();
     }
 
 
@@ -50,6 +51,8 @@ router.get('/:page?/:level1?', (req, res, next) => {
     next();
 
 })
+
+
 
 
 module.exports = router;

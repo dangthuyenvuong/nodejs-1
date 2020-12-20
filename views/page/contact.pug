@@ -1,10 +1,12 @@
 extends ../layout/master
 block content
-    nav#breadcrumbs.breadcrumbs
-        .container.page-wrapper
-            a(href='index.html') Home
-            |  / 
-            span.breadcrumb_last(aria-current='page') Contact
+
+    include ../mixin/breadcrumb
+    +breadcrumb([
+        {title: 'Home', link: '/'},
+        {title: 'Contact'}
+    ])
+
     // contact-form 2
     section.w3l-contact-2.py-5
         .container.py-lg-5.py-md-4

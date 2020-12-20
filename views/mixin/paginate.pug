@@ -1,0 +1,6 @@
+mixin paginate(list)
+    .pagination-wrapper.mt-5
+        ul.page-pagination
+            each item in list
+                li
+                    a.page-numbers(href=item.url) #{item.num}

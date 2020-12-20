@@ -1,0 +1,135 @@
+mixin featured1(item)
+    .card
+        .card-header.p-0.position-relative
+            a(href='/chi-tiet/' + item.slug)
+                img.card-img-bottom.d-block.radius-image(src=item.cover alt='Card image cap')
+        .card-body.p-0.blog-details
+            a.blog-desc(href='/chi-tiet/' + item.slug)
+                | #{item.title}
+            p
+                | #{item.description}
+            .author.align-items-center.mt-3.mb-1
+                a(href='author.html') #{item.author.name}
+                |  in 
+                a(href='#url') #{item.categories[0].title}
+            ul.blog-meta
+                li.meta-item.blog-lesson
+                    span.meta-value  #{convertTimeToDate(item.published_at)}
+                li.meta-item.blog-students
+                    span.meta-value #{item.time_read} min read
+            a.btn.btn-style.btn-outline.mt-4(href='blog.html')
+                | All featured
+                | posts
+
+
+mixin featured(item, index)
+    .grids5-info(class=index > 0 ? 'mt-5': '')
+        a.d-block.zoom(href='/chi-tiet/' + item.slug)
+            img.img-fluid.radius-image.news-image(src=item.cover alt='')
+        .blog-info.align-self
+            a.blog-desc1(href='/chi-tiet/' + item.slug)
+            | #{item.title}
+            .author.align-items-center.mt-3.mb-1
+            a(href='author.html') #{item.author.name}
+            |  in 
+            a(href='#url') #{item.categories[0].title}
+            ul.blog-meta
+            li.meta-item.blog-lesson
+                span.meta-value  #{convertTimeToDate(item.published_at)}
+            li.meta-item.blog-students
+                span.meta-value  #{item.time_read} min read
+
+
+mixin trending(item ,index)
+    .grids5-info
+        h4 0#{index + 1}.
+        .blog-info
+            a.blog-desc1(href='/chi-tiet/' + item.slug)
+                | #{item.title}
+            .author.align-items-center.mt-2.mb-1
+                a(href='author.html') #{item.author.name}
+                |  in 
+                a(href='#url') #{item.categories[0].title}
+            ul.blog-meta
+                li.meta-item.blog-lesson
+                    span.meta-value  #{convertTimeToDate(item.published_at)}
+                li.meta-item.blog-students
+                    span.meta-value  #{item.time_read} min read
+
+
+mixin hightlight1(item)
+    .item.mt-5.pt-4
+        .row
+            .col-lg-6
+                a(href='/chi-tiet/' + item.slug)
+                    img.card-img-bottom.d-block.radius-image(src=item.cover alt='Card image cap')
+            .col-lg-6.blog-details.align-self.mt-lg-0.mt-sm-5.mt-4
+                a.blog-desc-big(href='/chi-tiet/' + item.slug)
+                    | #{item.title}
+                p #{item.description}
+                .author.align-items-center.mt-4.mb-1
+                    a(href='author.html') #{item.author.name}
+                    |  in 
+                    a(href='#url') #{item.categories[0].title}
+                ul.blog-meta
+                    li.meta-item.blog-lesson
+                        span.meta-value #{convertTimeToDate(item.published_at)}
+                    li.meta-item.blog-students
+                        span.meta-value  #{item.time_read} min read
+
+
+mixin highlight(item)
+    .grids5-info(class=attributes.class)
+        a.d-block.zoom(href='/chi-tiet/' + item.slug)
+            img.img-fluid.radius-image.news-image(src=item.cover alt='')
+        .blog-info.align-self
+            a.blog-desc1(href='/chi-tiet/' + item.slug)
+                | #{item.title}
+            .author.align-items-center.mt-3.mb-1
+                a(href='author.html') #{item.author.name}
+                |  in 
+                a(href='#url') #{item.categories[0].title}
+            ul.blog-meta
+                li.meta-item.blog-lesson
+                    span.meta-value  #{convertTimeToDate(item.published_at)}
+                li.meta-item.blog-students
+                    span.meta-value  #{item.time_read}min read
+
+
+mixin post1(item)
+    .grids5-info.img-block-mobile(class=attributes.class)
+        .blog-info.align-self
+            span.category Technology
+            a.blog-desc.mt-0(href='/chi-tiet/' + item.slug)
+                | #{item.title}
+            p
+                | #{item.description}
+            .author.align-items-center.mt-3.mb-1
+                a(href='author.html') #{item.author.name}
+                |  in 
+                a(href='#url') #{item.categories[0].title}
+            ul.blog-meta
+                li.meta-item.blog-lesson
+                    span.meta-value  #{convertTimeToDate(item.published_at)}
+                li.meta-item.blog-students
+                    span.meta-value  #{item.time_read}min read
+        a.d-block.zoom.mt-md-0.mt-3(href='/chi-tiet/' + item.slug)
+            img.img-fluid.radius-image.news-image(src=item.cover alt='')
+
+
+mixin post2(item)
+    .grids5-info(class=attributes.class)
+        a.d-block.zoom(href='/chi-tiet/' + item.slug)
+            img.img-fluid.radius-image.news-image(src=item.cover alt='')
+        .blog-info.align-self
+            a.blog-desc1(href='/chi-tiet/' + item.slug)
+                | #{item.title}
+            .author.align-items-center.mt-3.mb-1
+                a(href='author.html') #{item.author.name}
+                |  in 
+                a(href='#url') #{item.categories[0].title}
+            ul.blog-meta
+                li.meta-item.blog-lesson
+                    span.meta-value  #{convertTimeToDate(item.published_at)}
+                li.meta-item.blog-students
+                    span.meta-value  #{item.time_read}min read

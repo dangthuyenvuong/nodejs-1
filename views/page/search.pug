@@ -1,0 +1,215 @@
+extends ../layout/master
+
+
+block content
+    include ../mixin/breadcrumb
+    +breadcrumb([
+        {title: 'Home', link: '/'},
+        {title: 'More'},
+        {title: 'Search Results'}
+    ])
+
+    .w3l-searchblock.w3l-homeblock1.py-5
+        .container.py-lg-4.py-md-3
+            // block
+            .row.img-block-mobile
+                .col-lg-9.most-recent
+                    span We found 5 articles for you
+                    h3.section-title-left Search results for : &quot;Design&quot;
+                    .list-view
+                        .grids5-info
+                            .blog-info
+                                span.category Technology
+                                a.blog-desc.mt-0(href='blog-single.html')
+                                    | Curated Collection Post : 8
+                                    | Examples of
+                                    | Evolution in Action
+                                p
+                                    | Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur
+                                    | accusamus
+                                    | voluptas. Mollitia, natus ipsam maiores placeat elit.
+                                .author.align-items-center.mt-3.mb-1
+                                    a(href='author.html') Johnson smith
+                                    |  in 
+                                    a(href='#url') Design
+                                ul.blog-meta
+                                    li.meta-item.blog-lesson
+                                        span.meta-value  April 13, 2020 
+                                    li.meta-item.blog-students
+                                        span.meta-value  6min read
+                            a.d-block.zoom(href='blog-single.html')
+                                img.img-fluid.radius-image.news-image.mt-md-0.mt-3(src='/assets/images/8.jpg' alt='')
+                        .grids5-info.mt-5
+                            .blog-info
+                                span.category Based on your reading history
+                                a.blog-desc.mt-0(href='blog-single.html')
+                                    | The Key Benefits of Studying
+                                    | Online
+                                    | [Infographic]
+                                p
+                                    | Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur
+                                    | accusamus
+                                    | voluptas. Mollitia, natus ipsam maiores beatae elit.
+                                .author.align-items-center.mt-3.mb-1
+                                    a(href='author.html') Johnson smith
+                                    |  in 
+                                    a(href='#url') Design
+                                ul.blog-meta
+                                    li.meta-item.blog-lesson
+                                        span.meta-value  April 13, 2020 
+                                    li.meta-item.blog-students
+                                        span.meta-value  6min read
+                            a.d-block.zoom(href='blog-single.html')
+                                img.img-fluid.radius-image.news-image.mt-md-0.mt-3(src='/assets/images/9.jpg' alt='')
+                        .grids5-info.mt-5
+                            .blog-info
+                                span.category Culture
+                                a.blog-desc.mt-0(href='blog-single.html')
+                                    | How to Write a Blog Post: A
+                                    | Step-by-Step
+                                    | Guide
+                                p
+                                    | Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur
+                                    | accusamus
+                                    | voluptas. Mollitia, natus ipsam maiores beatae elit.
+                                .author.align-items-center.mt-3.mb-1
+                                    a(href='author.html') Johnson smith
+                                    |  in 
+                                    a(href='#url') Design
+                                ul.blog-meta
+                                    li.meta-item.blog-lesson
+                                        span.meta-value  April 13, 2020 
+                                    li.meta-item.blog-students
+                                        span.meta-value  6min read
+                            a.d-block.zoom(href='blog-single.html')
+                                img.img-fluid.radius-image.news-image.mt-md-0.mt-3(src='/assets/images/16.jpg' alt='')
+                        .grids5-info.mt-5
+                            .blog-info
+                                span.category Sports and Fitness
+                                a.blog-desc.mt-0(href='blog-single.html')
+                                    | Ivy Goes Mobile With New App for
+                                    | Designers
+                                p
+                                    | Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur
+                                    | accusamus
+                                    | voluptas. Mollitia, natus ipsam maiores beatae elit.
+                                .author.align-items-center.mt-3.mb-1
+                                    a(href='author.html') Johnson smith
+                                    |  in 
+                                    a(href='#url') Design
+                                ul.blog-meta
+                                    li.meta-item.blog-lesson
+                                        span.meta-value  April 13, 2020 
+                                    li.meta-item.blog-students
+                                        span.meta-value  6min read
+                            a.d-block.zoom(href='blog-single.html')
+                                img.img-fluid.radius-image.news-image.mt-md-0.mt-3(src='/assets/images/14.jpg' alt='')
+                        .grids5-info.mt-5
+                            .blog-info
+                                span.category Health and Food 
+                                a.blog-desc.mt-0(href='blog-single.html')
+                                    | What I Wish I Had Known Before
+                                    | Writing My
+                                    | First Book
+                                p
+                                    | Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur
+                                    | accusamus
+                                    | voluptas. Mollitia, natus ipsam maiores beatae elit.
+                                .author.align-items-center.mt-3.mb-1
+                                    a(href='author.html') Johnson smith
+                                    |  in 
+                                    a(href='#url') Design
+                                ul.blog-meta
+                                    li.meta-item.blog-lesson
+                                        span.meta-value  April 13, 2020 
+                                    li.meta-item.blog-students
+                                        span.meta-value  6min read
+                            a.d-block.zoom(href='blog-single.html')
+                                img.img-fluid.radius-image.news-image.mt-md-0.mt-3(src='/assets/images/15.jpg' alt='')
+                    // pagination
+                    .pagination-wrapper.mt-5
+                        ul.page-pagination
+                            li
+                                span.page-numbers.current(aria-current='page') 1
+                            li
+                                a.page-numbers(href='#url') 2
+                            li
+                                a.page-numbers(href='#url') 3
+                            li
+                                a.page-numbers(href='#url') 4
+                            li
+                                a.page-numbers(href='#url') ....
+                            li
+                                a.page-numbers(href='#url') 15
+                            li
+                                a.next(href='#url')
+                                    span.fa.fa-angle-right
+                    // //pagination
+                .col-lg-3.trending.mt-lg-0.mt-5
+                    .pos-sticky
+                        h3.section-title-left Trending 
+                        .grids5-info
+                            h4 01.
+                            .blog-info
+                                a.blog-desc1(href='blog-single.html')
+                                    | 10 Fresh Ways to Get Better Results
+                                    | From Your
+                                    | Blog Posts
+                                .author.align-items-center.mt-2.mb-1
+                                    a(href='author.html') Johnson smith
+                                    |  in 
+                                    a(href='#url') Design
+                            ul.blog-meta
+                                li.meta-item.blog-lesson
+                                    span.meta-value  April 13, 2020 
+                                li.meta-item.blog-students
+                                    span.meta-value  6min read
+                    .grids5-info
+                        h4 02.
+                        .blog-info
+                            a.blog-desc1(href='blog-single.html')
+                                | How to Optimize for on-page SEO.
+                            .author.align-items-center.mt-2.mb-1
+                                a(href='author.html') Johnson smith
+                                |  in 
+                                a(href='#url') Design
+                            ul.blog-meta
+                                li.meta-item.blog-lesson
+                                    span.meta-value  April 13, 2020 
+                                li.meta-item.blog-students
+                                    span.meta-value  6min read
+                    .grids5-info
+                        h4 03.
+                        .blog-info
+                            a.blog-desc1(href='blog-single.html')
+                                | What to Post on the Instagram
+                            .author.align-items-center.mt-2.mb-1
+                                a(href='author.html') Johnson smith
+                                |  in 
+                                a(href='#url') Design
+                            ul.blog-meta
+                                li.meta-item.blog-lesson
+                                    span.meta-value  April 13, 2020 
+                                li.meta-item.blog-students
+                                    span.meta-value  6min read
+                    .grids5-info
+                        h4 04.
+                        .blog-info
+                            a.blog-desc1(href='blog-single.html')
+                                | 18 Photo &amp; Video Ideas to Spark
+                                | Inspiration
+                            .author.align-items-center.mt-3.mb-1
+                                a(href='author.html') Johnson smith
+                                |  in 
+                                a(href='#url') Design
+                            ul.blog-meta
+                                li.meta-item.blog-lesson
+                                    span.meta-value  April 13, 2020 
+                                li.meta-item.blog-students
+                                    span.meta-value  6min read
+        // //block
+        // ad block
+        .ad-block.text-center.mt-5
+            a(href='#url')
+                img.img-fluid(src='/assets/images/ad.gif' alt='ad image')
+        // //ad block

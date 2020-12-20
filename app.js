@@ -7,8 +7,17 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const pageRouter = require('./routes/page');
+const postRouter = require('./routes/post');
+
+const mongodb = require('./core/mongodb');
 
 var app = express();
+app.locals.convertTimeToDate = (time) => {
+  var date = new Date(time);
+  return date.getDate() + ' Tháng ' + date.getMonth() + ', ' + date.getFullYear()
+}
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,8 +36,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/', pageRouter);
-
-
+app.use('/chi-tiet', postRouter);
+app.use('/the-loai', require('./routes/category'));
+app.use('/test', require('./routes/test'));
 
 
 
