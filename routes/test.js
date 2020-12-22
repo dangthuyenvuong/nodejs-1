@@ -102,10 +102,10 @@ function installComment() {
 
 /* GET users listing. */
 router.get('/raw-data', function (req, res, next) {
-    // let user = installUser();
-    // let cateogryTag = installCategoryTag();
-    // let post = installPost();
-    // let comment = installComment();
+    let user = installUser();
+    let cateogryTag = installCategoryTag();
+    let post = installPost();
+    let comment = installComment();
     res.json(post);
 });
 
