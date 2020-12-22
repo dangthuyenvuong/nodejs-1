@@ -16,7 +16,7 @@ var url = "mongodb://localhost:27017";
 
 
 // Message: user, room, message, created_at
-// Room: people: []
+// Room: people: [], type: 'private' | 'group'
 
 
 
