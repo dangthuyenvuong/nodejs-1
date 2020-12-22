@@ -1,0 +1,25 @@
+[{
+    "title": "title",
+    "tac_gia": [{
+            "email": "abc@gmail.com"
+        },
+        {
+            "email": "def@gmail.com"
+        }
+    ]
+}]
+
+
+[{
+        "title": "title",
+        "tac_gia": {
+            "email": "abc@gmail.com"
+        }
+    },
+    {
+        "title": "title",
+        "tac_gia": {
+            "email": "def@gmail.com"
+        }
+    }
+]

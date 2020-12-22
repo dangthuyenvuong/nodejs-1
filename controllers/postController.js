@@ -7,9 +7,12 @@ module.exports = {
 
         let { slug } = req.params;
 
-        let result = await Post.getPostSlug(slug);
+        // let result = await Post.getPostSlug(slug);
         let highlight = await Post.getHighlight(2);
+
+        let result = await Post.getPostBySlug(slug)
+
         res.render('post_detail', { ...result, highlight });
     },
-    
+
 }

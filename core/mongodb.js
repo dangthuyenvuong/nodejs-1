@@ -13,7 +13,22 @@ var url = "mongodb://localhost:27017";
 // categry: title, slug
 // comment: user, post, content, created_at
 
-let postCollection, userCollection, tagCollection, categoryCollection, commentCollection;
+
+
+// Message: user, room, message, created_at
+// Room: people: []
+
+
+
+// Room: people: [user1, user2]
+
+// Room: people: [user1, user2, user3, user4, user5]
+
+// room : people [user1, user2]
+
+
+
+let postCollection, userCollection, tagCollection, categoryCollection, commentCollection, messageCollection, roomCollection;
 
 
 MongoClient.connect(url, { useUnifiedTopology: true }, (err, db) => {
@@ -36,6 +51,12 @@ MongoClient.connect(url, { useUnifiedTopology: true }, (err, db) => {
         userCollection.createIndex({ email: 1 }, { unique: 1 })
         tagCollection.createIndex({ slug: 1 }, { unique: 1 })
         categoryCollection.createIndex({ slug: 1 }, { unique: 1 })
+
+
+        // ---------------
+        messageCollection = database.collection('message');
+        roomCollection = database.collection('room');
+
 
 
         // let userCollection = database.collection('user');
@@ -98,6 +119,17 @@ MongoClient.connect(url, { useUnifiedTopology: true }, (err, db) => {
 
 
         // db.close()
+
+
+
+        // find
+        // findOne : {}
+        // findMany: []
+
+
+        // findOneAndUpdate(query, data)
+
+
     }
 
 })
@@ -112,7 +144,9 @@ module.exports = function (name) {
         Post: postCollection,
         Tag: tagCollection,
         Category: categoryCollection,
-        Comment: commentCollection
+        Comment: commentCollection,
+        Message: messageCollection,
+        Room: roomCollection
     }
 
     return object[name] || null

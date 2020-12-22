@@ -7,7 +7,7 @@ head
     meta(name='viewport' content='width=device-width, initial-scale=1')
     link(href='http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet')
     link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet')
-    link(href='/chat/style.css' rel='stylesheet')
+    link(rel='stylesheet' href='/chat/style.css')
 .container
     .panel.messages-panel
         .contacts-list
@@ -23,54 +23,54 @@ head
                         span.fa.fa-search.form-control-feedback
                     .contacts-outter
                         ul.list-unstyled.contacts
-                            li.active(data-toggle='tab' data-target='#inbox-message-1')
-                                .message-count  1 
-                                img.img-circle.medium-image(alt='' src='https://bootdey.com/img/Content/avatar/avatar1.png')
-                                .vcentered.info-combo
-                                    h3.no-margin-bottom.name  John Doe 
-                                    h5
-                                        | Hah, too late, I already bought it and my team is impleting the new design right now.
-                                .contacts-add
-                                    span.message-time
-                                        | 2:32 
-                                        sup AM
-                                    i.fa.fa-trash-o
-                                    i.fa.fa-paperclip
-                            li(data-toggle='tab' data-target='#inbox-message-2')
-                                img.img-circle.medium-image(alt='' src='https://bootdey.com/img/Content/avatar/avatar1.png')
-                                .vcentered.info-combo
-                                    h3.no-margin-bottom.name  John Doe 
-                                    h5  Of course, just call me before that, in case I forget. 
-                                .contacts-add
-                                    span.message-time
-                                        | 3:56 
-                                        sup AM
-                                    i.fa.fa-trash-o
-                                    i.fa.fa-paperclip
-                            li(data-toggle='tab' data-target='#inbox-message-3')
-                                .message-count  1 
-                                img.img-circle.medium-image(alt='' src='https://bootdey.com/img/Content/avatar/avatar1.png')
-                                .vcentered.info-combo
-                                    h3.no-margin-bottom.name  John Doe
-                                    h5  Hey, you asked for my feedback, it&apos;s brilliant. Damn, I
-                                .contacts-add
-                                    span.message-time
-                                        | 5:21 
-                                        sup AM
-                                    i.fa.fa-trash-o
-                                    i.fa.fa-paperclip
-                            li(data-toggle='tab' data-target='#inbox-message-4')
-                                .message-count  2 
-                                img.img-circle.medium-image(alt='' src='https://bootdey.com/img/Content/avatar/avatar1.png')
-                                .vcentered.info-combo
-                                    h3.no-margin-bottom.name  John Doe 
-                                    h5  And invite Daniel too, please 
-                                .contacts-add
-                                    span.message-time
-                                        | 6:13 
-                                        sup AM
-                                    i.fa.fa-trash-o
-                                    i.fa.fa-paperclip
+                            //- li.active(data-toggle='tab' data-target='#inbox-message-1')
+                            //-     .message-count  1 
+                            //-     img.img-circle.medium-image(alt='' src='https://bootdey.com/img/Content/avatar/avatar1.png')
+                            //-     .vcentered.info-combo
+                            //-         h3.no-margin-bottom.name  John Doe 
+                            //-         h5
+                            //-             | Hah, too late, I already bought it and my team is impleting the new design right now.
+                            //-     .contacts-add
+                            //-         span.message-time
+                            //-             | 2:32 
+                            //-             sup AM
+                            //-         i.fa.fa-trash-o
+                            //-         i.fa.fa-paperclip
+                            //- li(data-toggle='tab' data-target='#inbox-message-2')
+                            //-     img.img-circle.medium-image(alt='' src='https://bootdey.com/img/Content/avatar/avatar1.png')
+                            //-     .vcentered.info-combo
+                            //-         h3.no-margin-bottom.name  John Doe 
+                            //-         h5  Of course, just call me before that, in case I forget. 
+                            //-     .contacts-add
+                            //-         span.message-time
+                            //-             | 3:56 
+                            //-             sup AM
+                            //-         i.fa.fa-trash-o
+                            //-         i.fa.fa-paperclip
+                            //- li(data-toggle='tab' data-target='#inbox-message-3')
+                            //-     .message-count  1 
+                            //-     img.img-circle.medium-image(alt='' src='https://bootdey.com/img/Content/avatar/avatar1.png')
+                            //-     .vcentered.info-combo
+                            //-         h3.no-margin-bottom.name  John Doe
+                            //-         h5  Hey, you asked for my feedback, it&apos;s brilliant. Damn, I
+                            //-     .contacts-add
+                            //-         span.message-time
+                            //-             | 5:21 
+                            //-             sup AM
+                            //-         i.fa.fa-trash-o
+                            //-         i.fa.fa-paperclip
+                            //- li(data-toggle='tab' data-target='#inbox-message-4')
+                            //-     .message-count  2 
+                            //-     img.img-circle.medium-image(alt='' src='https://bootdey.com/img/Content/avatar/avatar1.png')
+                            //-     .vcentered.info-combo
+                            //-         h3.no-margin-bottom.name  John Doe 
+                            //-         h5  And invite Daniel too, please 
+                            //-     .contacts-add
+                            //-         span.message-time
+                            //-             | 6:13 
+                            //-             sup AM
+                            //-         i.fa.fa-trash-o
+                            //-         i.fa.fa-paperclip
                 #sent.contacts-outter-wrapper.tab-pane
                     form.panel-search-form.success.form-group.has-feedback.no-margin-bottom
                         input.form-control(type='text' name='search' placeholder='Search')
@@ -722,4 +722,3 @@ script(src='http://code.jquery.com/jquery-1.10.2.min.js')
 script(src='http://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
 script(src='/socket.io/socket.io.js')
 script(src='/chat/script.js')
-script(type='text/javascript').

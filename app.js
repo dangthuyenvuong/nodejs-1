@@ -12,6 +12,7 @@ const postRouter = require('./routes/post');
 const mongodb = require('./core/mongodb');
 
 var app = express();
+
 app.locals.convertTimeToDate = (time) => {
   var date = new Date(time);
   return date.getDate() + ' Tháng ' + date.getMonth() + ', ' + date.getFullYear()

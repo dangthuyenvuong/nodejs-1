@@ -126,6 +126,68 @@ module.exports = {
             //     }
             // })
         })
+    },
+
+
+    getPostBySlug: (slug) => {
+        return new Promise((resolve, reject) => {
+            Mongodb('Post').aggregate([
+                {
+                    $match: { slug }
+                },
+                {
+                    $lookup: {
+                        from: 'user',
+                        localField: 'author',
+                        foreignField: '_id',
+                        as: 'author'
+                    }
+                },
+                {
+                    $unwind: '$author'
+                },
+                {
+                    $lookup: {
+                        from: 'category',
+                        localField: 'categories',
+                        foreignField: '_id',
+                        as: 'categories'
+                    }
+                },
+                // {
+                //     $unwind: '$categories'
+                // },
+                {
+                    $lookup: {
+                        from: 'tag',
+                        localField: 'tags',
+                        foreignField: '_id',
+                        as: 'tags'
+                    }
+                },
+                // {
+                //     $skip: 2 * 5
+                // },
+                // {
+                //     $limit: 2
+                // },
+
+                // {
+                //     $project: {
+                //         slug: 0,
+                //         'author.email': 0,
+                //         'tags.title': 0
+                //     }
+                // }
+            ]).toArray((err, result) => {
+                if (err) throw err
+                else {
+                    resolve(result?.[0] || {})
+                }
+
+            })
+
+        })
     }
 
 
