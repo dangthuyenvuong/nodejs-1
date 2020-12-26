@@ -21,6 +21,7 @@ app.locals.convertTimeToDate = (time) => {
 
 
 // view engine setup
+// app.set('views', path.join(__dirname, 'backend/views'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -40,6 +41,39 @@ app.use('/', pageRouter);
 app.use('/chi-tiet', postRouter);
 app.use('/the-loai', require('./routes/category'));
 app.use('/test', require('./routes/test'));
+
+// backend
+
+function adminMiddleware(req, res, next) {
+  let { path } = req;
+  let { login } = req.cookies;
+
+  if (login) {
+    req.login = JSON.parse(login)
+    res.locals.login = req.login
+    res.locals.path = path;
+    // console.log(path)
+  }
+
+  if (path === '/login') {
+
+    if (login) {
+      res.redirect('/admin');
+    } else {
+      next()
+    }
+  } else {
+
+    if (login) {
+      next()
+    } else {
+      res.redirect('/admin/login');
+    }
+  }
+
+}
+
+app.use('/admin', adminMiddleware, require('./backend/router'));
 
 
 

@@ -27,11 +27,14 @@ var url = "mongodb://localhost:27017";
 // room : people [user1, user2]
 
 
+// admin : name, email, birthday, avatar, gender, rule
 
-let postCollection, userCollection, tagCollection, categoryCollection, commentCollection, messageCollection, roomCollection;
+
+let postCollection, userCollection, tagCollection, categoryCollection, commentCollection, messageCollection, roomCollection, adminCollection;
 
 
 MongoClient.connect(url, { useUnifiedTopology: true }, (err, db) => {
+
     if (err) {
         console.log('Connect MongoDB error')
         throw err;
@@ -43,12 +46,14 @@ MongoClient.connect(url, { useUnifiedTopology: true }, (err, db) => {
 
         postCollection = database.collection('post');
         userCollection = database.collection('user');
+        adminCollection = database.collection('admin');
         tagCollection = database.collection('tag');
         categoryCollection = database.collection('category');
         commentCollection = database.collection('comment');
 
         postCollection.createIndex({ slug: 1 }, { unique: 1 })
         userCollection.createIndex({ email: 1 }, { unique: 1 })
+        adminCollection.createIndex({ email: 1 }, { unique: 1 })
         tagCollection.createIndex({ slug: 1 }, { unique: 1 })
         categoryCollection.createIndex({ slug: 1 }, { unique: 1 })
 
@@ -146,7 +151,8 @@ module.exports = function (name) {
         Category: categoryCollection,
         Comment: commentCollection,
         Message: messageCollection,
-        Room: roomCollection
+        Room: roomCollection,
+        Admin: adminCollection
     }
 
     return object[name] || null

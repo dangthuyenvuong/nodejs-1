@@ -1,0 +1,122 @@
+extends ../layout/master
+
+block content
+    h1 #{title}
+    .main-card.mb-3.card
+        .card-body
+            //- h5.card-title Bootstrap 4 Form Validation
+            form.needs-validation
+                input.form-control(type="hidden" placeholder="Title" name="_id" value=post._id)
+                .form-group
+                    label Title
+                    input.form-control(type="text" placeholder="Title" name="title" value=post.title)
+                .form-group
+                    label Slug
+                    input.form-control(type="text" placeholder="Title" name="slug" value=post.slug)
+
+                .form-group
+                    label Description
+                    input.form-control(type="text" placeholder="Title" name="description" value=post.description)
+
+                .form-group
+                    label Content
+                    textarea.form-control(type="text" placeholder="Title" name="content")
+                        | #{post.content}
+
+                .form-group
+                    label Published at
+                    input.form-control(type="date" placeholder="Title" name="published_at" value=post.published_at)
+                .form-group
+                    label Time read
+                    input.form-control(type="number" placeholder="Title" name="time_read" value=post.time_read)
+                .form-group
+                    label Author
+                    input.form-control(type="text" placeholder="Title" value=post.author)
+                .form-group
+                    label Tags
+                    input.form-control(type="text" placeholder="Title" value=post.tags)
+                .form-group
+                    label Categoryes
+                    input.form-control(type="text" placeholder="Title"  value=post.categories)
+                .form-group
+                    label Cover
+                    img(src=post.cover style="width: 200px; height: 200px; object-fit: contain")
+                .form-group
+                    label Feature
+                    input(type="checkbox" checked=post.feature === 1 ? true: false name="feature" )
+                .form-group
+                    label Trending
+                    input(type="checkbox" checked=post.trending === 1 ? true: false name="trending")
+                .form-group
+                    label Highlight
+                    input(type="checkbox" checked=post.highlight === 1 ? true: false name="highlight")
+                button.btn.btn-primary(type='submit' class="btn-submit") Submit form
+
+block js
+    script(src="/backend/post.js")
+
+//- .card-body
+//-     h5.card-title Bootstrap 4 Form Validation
+//-     form.needs-validation.was-validated(novalidate='')
+//-         .form-row
+//-             .col-md-4.mb-3
+//-                 label(for='validationCustom01') First name
+//-                 input#validationCustom01.form-control(type='text' placeholder='First name' value='Mark' required='')
+//-                 .valid-feedback
+//-                     | Looks good!
+//-             .col-md-4.mb-3
+//-                 label(for='validationCustom02') Last name
+//-                 input#validationCustom02.form-control(type='text' placeholder='Last name' value='Otto' required='')
+//-                 .valid-feedback
+//-                     | Looks good!
+//-             .col-md-4.mb-3
+//-                 label(for='validationCustomUsername') Username
+//-                 .input-group
+//-                     .input-group-prepend
+//-                         span#inputGroupPrepend.input-group-text @
+//-                     input#validationCustomUsername.form-control(type='text' placeholder='Username' aria-describedby='inputGroupPrepend' required='')
+//-                     .invalid-feedback
+//-                         | Please choose a username.
+//-         .form-row
+//-             .col-md-6.mb-3
+//-                 label(for='validationCustom03') City
+//-                 input#validationCustom03.form-control(type='text' placeholder='City' required='')
+//-                 .invalid-feedback
+//-                     | Please provide a valid city.
+//-             .col-md-3.mb-3
+//-                 label(for='validationCustom04') State
+//-                 input#validationCustom04.form-control(type='text' placeholder='State' required='')
+//-                 .invalid-feedback
+//-                     | Please provide a valid state.
+//-             .col-md-3.mb-3
+//-                 label(for='validationCustom05') Zip
+//-                 input#validationCustom05.form-control(type='text' placeholder='Zip' required='')
+//-                 .invalid-feedback
+//-                     | Please provide a valid zip.
+//-         .form-group
+//-             .form-check
+//-                 input#invalidCheck.form-check-input(type='checkbox' value='' required='')
+//-                 label.form-check-label(for='invalidCheck')
+//-                     | Agree to terms and conditions
+//-                 .invalid-feedback
+//-                     | You must agree before submitting.
+//-         button.btn.btn-primary(type='submit') Submit form
+//-     script.
+//-         // Example starter JavaScript for disabling form submissions if there are invalid fields
+//-         (function() {
+//-         'use strict';
+//-         window.addEventListener('load', function() {
+//-         // Fetch all the forms we want to apply custom Bootstrap validation styles to
+//-         var forms = document.getElementsByClassName('needs-validation');
+//-         // Loop over them and prevent submission
+//-         var validation = Array.prototype.filter.call(forms, function(form) {
+//-         form.addEventListener('submit', function(event) {
+//-         if (form.checkValidity() === false) {
+//-         event.preventDefault();
+//-         event.stopPropagation();
+//-         }
+//-         form.classList.add('was-validated');
+//-         }, false);
+//-         });
+//-         }, false);
+//-         })();

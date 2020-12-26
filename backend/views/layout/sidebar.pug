@@ -1,0 +1,89 @@
+.scrollbar-sidebar
+    .app-sidebar__inner
+        ul.vertical-nav-menu
+            li.app-sidebar__heading Dashboards
+            li
+                a.mm-active(href='index.html')
+                    i.metismenu-icon.pe-7s-rocket
+                    |                                     Dashboard Example 1
+            li.app-sidebar__heading Content Management
+            li(class=/\/post/.test(path) ? 'mm-active': '')
+                a(href='#')
+                    i.metismenu-icon.pe-7s-diamond
+                    | Post
+                    i.metismenu-state-icon.pe-7s-angle-down.caret-left
+                ul
+                    li
+                        a(href='/admin/post/add-new' class= path === '/post/add-new' ? 'mm-active': '')
+                            i.metismenu-icon
+                            | Thêm mới
+                    li
+                        a(href='/admin/post' class=path === '/post' ? 'mm-active': '')
+                            i.metismenu-icon
+                            | Danh sách
+            li
+                a(href='#')
+                    i.metismenu-icon.pe-7s-diamond
+                    | Page
+                    i.metismenu-state-icon.pe-7s-angle-down.caret-left
+                ul
+                    li
+                        a(href='elements-buttons-standard.html')
+                            i.metismenu-icon
+                            | Thêm mới
+                    li
+                        a(href='elements-buttons-standard.html')
+                            i.metismenu-icon
+                            | Danh sách
+            li
+                a(href='#')
+                    i.metismenu-icon.pe-7s-diamond
+                    | Category
+                    i.metismenu-state-icon.pe-7s-angle-down.caret-left
+                ul
+                    li
+                        a(href='elements-buttons-standard.html')
+                            i.metismenu-icon
+                            | Thêm mới
+                    li
+                        a(href='elements-buttons-standard.html')
+                            i.metismenu-icon
+                            | Danh sách
+            li
+                a(href='#')
+                    i.metismenu-icon.pe-7s-diamond
+                    | Tag
+                    i.metismenu-state-icon.pe-7s-angle-down.caret-left
+                ul
+                    li
+                        a(href='elements-buttons-standard.html')
+                            i.metismenu-icon
+                            | Thêm mới
+                    li
+                        a(href='elements-buttons-standard.html')
+                            i.metismenu-icon
+                            | Danh sách
+
+            li.app-sidebar__heading System Management
+            li
+                a(href='dashboard-boxes.html')
+                    i.metismenu-icon.pe-7s-display2
+                    | Media
+            li
+                a(href='dashboard-boxes.html')
+                    i.metismenu-icon.pe-7s-display2
+                    | Account
+                    i.metismenu-state-icon.pe-7s-angle-down.caret-left
+                ul
+                    li
+                        a(href='elements-buttons-standard.html')
+                            i.metismenu-icon
+                            | Thêm mới
+                    li
+                        a(href='elements-buttons-standard.html')
+                            i.metismenu-icon
+                            | Danh sách
+            li
+                a(href='dashboard-boxes.html')
+                    i.metismenu-icon.pe-7s-display2
+                    | Setting

@@ -4,6 +4,8 @@ const express = require('express');
 const pageController = require('../controllers/pageController');
 const app = require('../app');
 
+var cookieParser = require('cookie-parser')
+
 const router = express.Router();
 
 
@@ -19,8 +21,12 @@ router.get('/detail', (req, res, next) => {
 
 })
 
+cookieParser.signedCookie('aaa', '345345345')
+
 
 router.get('/:page?/:level1?', async (req, res, next) => {
+
+
 
     let { page, level1 } = req.params;
 

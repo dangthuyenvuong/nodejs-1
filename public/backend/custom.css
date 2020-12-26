@@ -1,0 +1,17 @@
+.login-page-h1 {
+    margin: 100px 0 50px 0;
+    text-align: center;
+}
+
+.login-page-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.table thead th {
+    text-transform: capitalize;
+}
+
+.pagination {
+    flex-wrap: wrap;
+}

@@ -1,0 +1,159 @@
+.ui-theme-settings
+    button#TooltipDemo.btn-open-options.btn.btn-warning(type='button')
+        i.fa.fa-cog.fa-w-16.fa-spin.fa-2x
+    .theme-settings__inner
+        .scrollbar-container
+            .theme-settings__options-wrapper
+                h3.themeoptions-heading
+                    | Layout Options
+                .p-3
+                    ul.list-group
+                        li.list-group-item
+                            .widget-content.p-0
+                                .widget-content-wrapper
+                                    .widget-content-left.mr-3
+                                        .switch.has-switch.switch-container-class(data-class='fixed-header')
+                                            .switch-animate.switch-on
+                                                input(type='checkbox' checked='' data-toggle='toggle' data-onstyle='success')
+                                    .widget-content-left
+                                        .widget-heading
+                                            | Fixed Header
+                                        .widget-subheading
+                                            | Makes the header top fixed, always
+                                            | visible!
+                        li.list-group-item
+                            .widget-content.p-0
+                                .widget-content-wrapper
+                                    .widget-content-left.mr-3
+                                        .switch.has-switch.switch-container-class(data-class='fixed-sidebar')
+                                            .switch-animate.switch-on
+                                                input(type='checkbox' checked='' data-toggle='toggle' data-onstyle='success')
+                                    .widget-content-left
+                                        .widget-heading
+                                            | Fixed Sidebar
+                                        .widget-subheading
+                                            | Makes the sidebar left fixed, always
+                                            | visible!
+                        li.list-group-item
+                            .widget-content.p-0
+                                .widget-content-wrapper
+                                    .widget-content-left.mr-3
+                                        .switch.has-switch.switch-container-class(data-class='fixed-footer')
+                                            .switch-animate.switch-off
+                                                input(type='checkbox' data-toggle='toggle' data-onstyle='success')
+                                    .widget-content-left
+                                        .widget-heading
+                                            | Fixed Footer
+                                        .widget-subheading
+                                            | Makes the app footer bottom fixed, always
+                                            | visible!
+                h3.themeoptions-heading
+                    div
+                        | Header Options
+                    button.btn-pill.btn-shadow.btn-wide.ml-auto.btn.btn-focus.btn-sm.switch-header-cs-class(type='button' data-class='')
+                        | Restore Default
+                .p-3
+                    ul.list-group
+                        li.list-group-item
+                            h5.pb-2
+                                | Choose Color Scheme
+                            .theme-settings-swatches
+                                .swatch-holder.bg-primary.switch-header-cs-class(data-class='bg-primary header-text-light')
+                                .swatch-holder.bg-secondary.switch-header-cs-class(data-class='bg-secondary header-text-light')
+                                .swatch-holder.bg-success.switch-header-cs-class(data-class='bg-success header-text-dark')
+                                .swatch-holder.bg-info.switch-header-cs-class(data-class='bg-info header-text-dark')
+                                .swatch-holder.bg-warning.switch-header-cs-class(data-class='bg-warning header-text-dark')
+                                .swatch-holder.bg-danger.switch-header-cs-class(data-class='bg-danger header-text-light')
+                                .swatch-holder.bg-light.switch-header-cs-class(data-class='bg-light header-text-dark')
+                                .swatch-holder.bg-dark.switch-header-cs-class(data-class='bg-dark header-text-light')
+                                .swatch-holder.bg-focus.switch-header-cs-class(data-class='bg-focus header-text-light')
+                                .swatch-holder.bg-alternate.switch-header-cs-class(data-class='bg-alternate header-text-light')
+                                .divider
+                                .swatch-holder.bg-vicious-stance.switch-header-cs-class(data-class='bg-vicious-stance header-text-light')
+                                .swatch-holder.bg-midnight-bloom.switch-header-cs-class(data-class='bg-midnight-bloom header-text-light')
+                                .swatch-holder.bg-night-sky.switch-header-cs-class(data-class='bg-night-sky header-text-light')
+                                .swatch-holder.bg-slick-carbon.switch-header-cs-class(data-class='bg-slick-carbon header-text-light')
+                                .swatch-holder.bg-asteroid.switch-header-cs-class(data-class='bg-asteroid header-text-light')
+                                .swatch-holder.bg-royal.switch-header-cs-class(data-class='bg-royal header-text-light')
+                                .swatch-holder.bg-warm-flame.switch-header-cs-class(data-class='bg-warm-flame header-text-dark')
+                                .swatch-holder.bg-night-fade.switch-header-cs-class(data-class='bg-night-fade header-text-dark')
+                                .swatch-holder.bg-sunny-morning.switch-header-cs-class(data-class='bg-sunny-morning header-text-dark')
+                                .swatch-holder.bg-tempting-azure.switch-header-cs-class(data-class='bg-tempting-azure header-text-dark')
+                                .swatch-holder.bg-amy-crisp.switch-header-cs-class(data-class='bg-amy-crisp header-text-dark')
+                                .swatch-holder.bg-heavy-rain.switch-header-cs-class(data-class='bg-heavy-rain header-text-dark')
+                                .swatch-holder.bg-mean-fruit.switch-header-cs-class(data-class='bg-mean-fruit header-text-dark')
+                                .swatch-holder.bg-malibu-beach.switch-header-cs-class(data-class='bg-malibu-beach header-text-light')
+                                .swatch-holder.bg-deep-blue.switch-header-cs-class(data-class='bg-deep-blue header-text-dark')
+                                .swatch-holder.bg-ripe-malin.switch-header-cs-class(data-class='bg-ripe-malin header-text-light')
+                                .swatch-holder.bg-arielle-smile.switch-header-cs-class(data-class='bg-arielle-smile header-text-light')
+                                .swatch-holder.bg-plum-plate.switch-header-cs-class(data-class='bg-plum-plate header-text-light')
+                                .swatch-holder.bg-happy-fisher.switch-header-cs-class(data-class='bg-happy-fisher header-text-dark')
+                                .swatch-holder.bg-happy-itmeo.switch-header-cs-class(data-class='bg-happy-itmeo header-text-light')
+                                .swatch-holder.bg-mixed-hopes.switch-header-cs-class(data-class='bg-mixed-hopes header-text-light')
+                                .swatch-holder.bg-strong-bliss.switch-header-cs-class(data-class='bg-strong-bliss header-text-light')
+                                .swatch-holder.bg-grow-early.switch-header-cs-class(data-class='bg-grow-early header-text-light')
+                                .swatch-holder.bg-love-kiss.switch-header-cs-class(data-class='bg-love-kiss header-text-light')
+                                .swatch-holder.bg-premium-dark.switch-header-cs-class(data-class='bg-premium-dark header-text-light')
+                                .swatch-holder.bg-happy-green.switch-header-cs-class(data-class='bg-happy-green header-text-light')
+                h3.themeoptions-heading
+                    div Sidebar Options
+                    button.btn-pill.btn-shadow.btn-wide.ml-auto.btn.btn-focus.btn-sm.switch-sidebar-cs-class(type='button' data-class='')
+                        | Restore Default
+                .p-3
+                    ul.list-group
+                        li.list-group-item
+                            h5.pb-2
+                                | Choose Color Scheme
+                            .theme-settings-swatches
+                                .swatch-holder.bg-primary.switch-sidebar-cs-class(data-class='bg-primary sidebar-text-light')
+                                .swatch-holder.bg-secondary.switch-sidebar-cs-class(data-class='bg-secondary sidebar-text-light')
+                                .swatch-holder.bg-success.switch-sidebar-cs-class(data-class='bg-success sidebar-text-dark')
+                                .swatch-holder.bg-info.switch-sidebar-cs-class(data-class='bg-info sidebar-text-dark')
+                                .swatch-holder.bg-warning.switch-sidebar-cs-class(data-class='bg-warning sidebar-text-dark')
+                                .swatch-holder.bg-danger.switch-sidebar-cs-class(data-class='bg-danger sidebar-text-light')
+                                .swatch-holder.bg-light.switch-sidebar-cs-class(data-class='bg-light sidebar-text-dark')
+                                .swatch-holder.bg-dark.switch-sidebar-cs-class(data-class='bg-dark sidebar-text-light')
+                                .swatch-holder.bg-focus.switch-sidebar-cs-class(data-class='bg-focus sidebar-text-light')
+                                .swatch-holder.bg-alternate.switch-sidebar-cs-class(data-class='bg-alternate sidebar-text-light')
+                                .divider
+                                .swatch-holder.bg-vicious-stance.switch-sidebar-cs-class(data-class='bg-vicious-stance sidebar-text-light')
+                                .swatch-holder.bg-midnight-bloom.switch-sidebar-cs-class(data-class='bg-midnight-bloom sidebar-text-light')
+                                .swatch-holder.bg-night-sky.switch-sidebar-cs-class(data-class='bg-night-sky sidebar-text-light')
+                                .swatch-holder.bg-slick-carbon.switch-sidebar-cs-class(data-class='bg-slick-carbon sidebar-text-light')
+                                .swatch-holder.bg-asteroid.switch-sidebar-cs-class(data-class='bg-asteroid sidebar-text-light')
+                                .swatch-holder.bg-royal.switch-sidebar-cs-class(data-class='bg-royal sidebar-text-light')
+                                .swatch-holder.bg-warm-flame.switch-sidebar-cs-class(data-class='bg-warm-flame sidebar-text-dark')
+                                .swatch-holder.bg-night-fade.switch-sidebar-cs-class(data-class='bg-night-fade sidebar-text-dark')
+                                .swatch-holder.bg-sunny-morning.switch-sidebar-cs-class(data-class='bg-sunny-morning sidebar-text-dark')
+                                .swatch-holder.bg-tempting-azure.switch-sidebar-cs-class(data-class='bg-tempting-azure sidebar-text-dark')
+                                .swatch-holder.bg-amy-crisp.switch-sidebar-cs-class(data-class='bg-amy-crisp sidebar-text-dark')
+                                .swatch-holder.bg-heavy-rain.switch-sidebar-cs-class(data-class='bg-heavy-rain sidebar-text-dark')
+                                .swatch-holder.bg-mean-fruit.switch-sidebar-cs-class(data-class='bg-mean-fruit sidebar-text-dark')
+                                .swatch-holder.bg-malibu-beach.switch-sidebar-cs-class(data-class='bg-malibu-beach sidebar-text-light')
+                                .swatch-holder.bg-deep-blue.switch-sidebar-cs-class(data-class='bg-deep-blue sidebar-text-dark')
+                                .swatch-holder.bg-ripe-malin.switch-sidebar-cs-class(data-class='bg-ripe-malin sidebar-text-light')
+                                .swatch-holder.bg-arielle-smile.switch-sidebar-cs-class(data-class='bg-arielle-smile sidebar-text-light')
+                                .swatch-holder.bg-plum-plate.switch-sidebar-cs-class(data-class='bg-plum-plate sidebar-text-light')
+                                .swatch-holder.bg-happy-fisher.switch-sidebar-cs-class(data-class='bg-happy-fisher sidebar-text-dark')
+                                .swatch-holder.bg-happy-itmeo.switch-sidebar-cs-class(data-class='bg-happy-itmeo sidebar-text-light')
+                                .swatch-holder.bg-mixed-hopes.switch-sidebar-cs-class(data-class='bg-mixed-hopes sidebar-text-light')
+                                .swatch-holder.bg-strong-bliss.switch-sidebar-cs-class(data-class='bg-strong-bliss sidebar-text-light')
+                                .swatch-holder.bg-grow-early.switch-sidebar-cs-class(data-class='bg-grow-early sidebar-text-light')
+                                .swatch-holder.bg-love-kiss.switch-sidebar-cs-class(data-class='bg-love-kiss sidebar-text-light')
+                                .swatch-holder.bg-premium-dark.switch-sidebar-cs-class(data-class='bg-premium-dark sidebar-text-light')
+                                .swatch-holder.bg-happy-green.switch-sidebar-cs-class(data-class='bg-happy-green sidebar-text-light')
+                h3.themeoptions-heading
+                    div Main Content Options
+                    button.btn-pill.btn-shadow.btn-wide.ml-auto.active.btn.btn-focus.btn-sm(type='button')
+                        | Restore Default
+                .p-3
+                    ul.list-group
+                        li.list-group-item
+                            h5.pb-2
+                                | Page Section Tabs
+                            .theme-settings-swatches
+                                .mt-2.btn-group(role='group')
+                                    button.btn-wide.btn-shadow.btn-primary.btn.btn-secondary.switch-theme-class(type='button' data-class='body-tabs-line')
+                                        | Line
+                                    button.btn-wide.btn-shadow.btn-primary.active.btn.btn-secondary.switch-theme-class(type='button' data-class='body-tabs-shadow')
+                                        | Shadow

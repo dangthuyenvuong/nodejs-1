@@ -1,0 +1,10 @@
+extends ../layout/master
+
+include ../mixin/dataTable
+block content
+    .main-card.mb-3.card
+        .card-body
+            h5.card-title Danh sách bài post
+            +dataTable(post, ['slug', 'title', 'cover'])
+
+
