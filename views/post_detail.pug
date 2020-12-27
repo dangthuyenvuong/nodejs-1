@@ -37,9 +37,115 @@ block content
                     .post-content
                         iframe.mb-5(src='https://www.youtube.com/embed/ZlbHdYMWSOA' frameborder='0' allowfullscreen='')
                 .single-post-content #{content}
-                .single-post-tag(style="margin-top: 20px;")
-                    each item in tags
-                        span(style="display: inline-block; margin: 0 10px; padding: 5px 10px; border: 1px solid #ccc; border-radius: 3px;") #{item.title}
+                    .d-grid.left-right.mt-5.pb-md-5
+                        .buttons-singles.tags
+                            h4 Tags :
+                            .single-post-tag(style="margin-top: 20px;")
+                                each item in tags
+                                    a(href='#blog-tag') #{item.title}
+                        .buttons-singles
+                            h4 Share :
+                            a(href='#blog-share')
+                                span.fa.fa-facebook(aria-hidden='true')
+                            a(href='#blog-share')
+                                span.fa.fa-twitter(aria-hidden='true')
+                            a(href='#blog-share')
+                                span.fa.fa-google-plus(aria-hidden='true')
+                            a(href='#blog-share')
+                                span.fa.fa-pinterest-p(aria-hidden=' true')
+                    // //author-card
+                    .author-card.mt-5
+                        .row.align-items-center
+                            .col-sm-3.col-6
+                                div
+                                    img.rounded-circle.img-fluid(src=author.avatar alt='')
+                            .col-sm-9.mt-sm-0.mt-3
+                                h3.mb-3.title #{author.name}
+                                p
+                                    | #{author.description}
+                                ul.author-icons.mt-4
+                                    li
+                                        a.facebook(href='#url')
+                                            span.fa.fa-facebook(aria-hidden='true')
+                                    li
+                                        a.twitter(href='#url')
+                                            span.fa.fa-twitter(aria-hidden='true')
+                                    li
+                                        a.google(href='#url')
+                                            span.fa.fa-google-plus(aria-hidden='true')
+                                    li
+                                        a.linkedin(href='#url')
+                                            span.fa.fa-linkedin(aria-hidden='true')
+                                    li
+                                        a.github(href='#url')
+                                            span.fa.fa-github(aria-hidden='true')
+                                    li
+                                        a.dribbble(href='#url')
+                                            span.fa.fa-dribbble(aria-hidden='true')
+                    // //author-card
+                    .comments.mt-5
+                        h4.side-title Comments (2)
+                        .media.mt-4
+                            .img-circle
+                                img.img-fluid(src='assets/images/c1.jpg' alt='...')
+                            .media-body
+                                ul.time-rply.mb-2
+                                    li
+                                        a.name.mt-0.mb-2.d-block(href='#URL') William Jack
+                                        |                                         April 15th, 2020 - 10:02 pm
+                                    li.reply-last
+                                        a.reply(href='#reply')
+                                            | Reply
+                                p
+                                    | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, hic
+                                    | reprehenderit eum cupiditate deleniti, Lorem ipsum dolor sit amet consectetur
+                                    | adipisicing.....
+                        .media
+                            .img-circle
+                                img.img-fluid(src='assets/images/c2.jpg' alt='...')
+                            .media-body
+                                ul.time-rply.mb-2
+                                    li
+                                        a.name.mt-0.mb-2.d-block(href='#URL') James Harper
+                                        |                                         April 15th, 2020 - 12:30 pm
+                                    li.reply-last
+                                        a.reply(href='#reply')
+                                            | Reply
+                                p
+                                    | Lorem ipsum dolor, sit amet consectetur adipisicing. Ea consequuntur illum facere
+                                    | aperiam sequi optio consectetur adipisicing elitFuga,
+                                    | suscipit totam animi.....
+                                .media.second.mt-4.p-0.pt-2
+                                    a.img-circle.img-circle-sm(href='#url')
+                                        img.img-fluid(src='assets/images/c3.jpg' alt='...')
+                                    .media-body
+                                        ul.time-rply.mb-2
+                                            li
+                                                a.name.mt-0.mb-2.d-block(href='#URL') Jackson Wyatt
+                                                |                                                 April 15th, 2020 - 14:20 pm
+                                            li.reply-last
+                                                a.reply(href='#reply')  Reply
+                                        p
+                                            | At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                                            | corrupti quos dolores et. Lorem ipsum dolor sit amet......
+                    #reply.leave-comment-form.mt-5
+                        h4.side-title.mb-2 Leave a Reply
+                        if login
+                            p.mb-4
+                                | Your email address will not be published. Required fields are marked *
+                            form(action='#' method='post')
+                                .form-group
+                                    textarea.form-control(name='Comment' placeholder='Your Comment*' required='' spellcheck='false')
+                                .input-grids.row
+                                    .form-group.col-lg-6
+                                        input.form-control(type='text' name='Name' placeholder='Your Name*' required='')
+                                    .form-group.col-lg-6
+                                        input.form-control(type='email' name='Email' placeholder='Email*' required='')
+                                .submit.text-right
+                                    button.btn.btn-style.btn-primary Post Comment 
+                        else
+                            button.btn.btn-style.btn-primary.btn-login Login To comment
+
                 // related posts
                 .item.mt-5.pt-lg-5
                     h3.section-title-left Maybe You are Interested in 
@@ -50,3 +156,5 @@ block content
                                     +highlight(item)
                 // //related posts
                 // //blog-post
+
+
