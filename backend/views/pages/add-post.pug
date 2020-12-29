@@ -6,41 +6,41 @@ block content
         .card-body
             //- h5.card-title Bootstrap 4 Form Validation
             form.needs-validation
-                input.form-control(type="hidden" placeholder="Title" name="_id" value=post._id)
+                input.form-control(type="hidden" placeholder="Id" name="_id" value=post._id)
                 .form-group
                     label Title
                     input.form-control(type="text" placeholder="Title" name="title" value=post.title)
                 .form-group
                     label Slug
-                    input.form-control(type="text" placeholder="Title" name="slug" value=post.slug)
+                    input.form-control(type="text" placeholder="Slug" name="slug" value=post.slug)
 
                 .form-group
                     label Description
-                    input.form-control(type="text" placeholder="Title" name="description" value=post.description)
+                    input.form-control(type="text" placeholder="Description" name="description" value=post.description)
 
                 .form-group
                     label Content
-                    textarea.form-control(type="text" placeholder="Title" name="content")
+                    textarea.form-control(type="text" placeholder="Content" name="content")
                         | #{post.content}
 
                 .form-group
                     label Published at
-                    input.form-control(type="date" placeholder="Title" name="published_at" value=post.published_at)
+                    input.form-control(type="date" placeholder="Published at" name="published_at" value=post.published_at)
                 .form-group
                     label Time read
-                    input.form-control(type="number" placeholder="Title" name="time_read" value=post.time_read)
+                    input.form-control(type="number" placeholder="Time read" name="time_read" value=post.time_read)
                 .form-group
                     label Author
-                    input.form-control(type="text" placeholder="Title" value=post.author)
+                    input.form-control(type="text" placeholder="Author" value=post.author)
                 .form-group
                     label Tags
-                    input.form-control(type="text" placeholder="Title" value=post.tags)
+                    input.form-control(type="text" placeholder="Tags" value=post.tags)
                 .form-group
-                    label Categoryes
-                    input.form-control(type="text" placeholder="Title"  value=post.categories)
+                    label Categories
+                    input.form-control(type="text" placeholder="Categories"  value=post.categories)
                 .form-group
                     label Cover
-                    img(src=post.cover style="width: 200px; height: 200px; object-fit: contain")
+                    img.asset-media(src=post.cover style="width: 200px; height: 200px; object-fit: contain")
                 .form-group
                     label Feature
                     input(type="checkbox" checked=post.feature === 1 ? true: false name="feature" )
@@ -50,7 +50,9 @@ block content
                 .form-group
                     label Highlight
                     input(type="checkbox" checked=post.highlight === 1 ? true: false name="highlight")
-                button.btn.btn-primary(type='submit' class="btn-submit") Submit form
+                button.mb-2.mr-2.btn.btn-secondary(type='submit' class="btn-back") Back
+                button.mb-2.mr-2.btn.btn-primary(type='submit' class=className) #{btnName}
+                .show-noti
 
 block js
     script(src="/backend/post.js")

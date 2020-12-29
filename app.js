@@ -73,7 +73,9 @@ function adminMiddleware(req, res, next) {
 
 }
 
-app.use('/admin', adminMiddleware, require('./backend/router'));
+let backend = require('./backend/router');
+
+app.use('/admin', adminMiddleware, backend.middleware, backend.router);
 
 
 

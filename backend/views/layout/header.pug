@@ -44,7 +44,6 @@
                         .widget-content-left
                             .btn-group
                                 a.p-0.btn(data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-                                    | #{login.name}
                                     img.rounded-circle(width='42' src=login.avatar alt='' style="margin-left: 10px;")
                                     i.fa.fa-angle-down.ml-2.opacity-8
                                 .dropdown-menu.dropdown-menu-right(tabindex='-1' role='menu' aria-hidden='true')
@@ -58,9 +57,9 @@
                                     a.dropdown-item(type='button' tabindex='0' href="/admin/logout") Logout
                         .widget-content-left.ml-3.header-user-info
                             .widget-heading
-                                | Alina Mclourd
+                                | #{login.name}
                             .widget-subheading
-                                | VP People Manager
+                                | Admin
                         .widget-content-right.header-user-info.ml-3
                             button.btn-shadow.p-1.btn.btn-primary.btn-sm.show-toastr-example(type='button')
                                 i.fa.text-white.fa-calendar.pr-1.pl-1

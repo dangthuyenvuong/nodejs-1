@@ -1,20 +1,48 @@
 const Post = require("../models/Post");
 
-function validate(data) {
-    return data;
+function validate(data, isUpdate = false) {
+    const post = {
+        title: data.title,
+        description: data.description,
+        cover: data.cover,
+        category: data.category,
+        published_at: data.published_at,
+        time_read: data.time_read,
+        feature: data.feature,
+        trending: data.trending,
+        highlight: data.highlight,
+        slug: data.slug,
+        content: data.content
+    };
+
+    const postUpdate = {
+        title: data.title,
+        description: data.description,
+        cover: data.cover,
+        category: data.category,
+        published_at: data.published_at,
+        time_read: data.time_read,
+        feature: data.feature,
+        trending: data.trending,
+        highlight: data.highlight,
+        slug: data.slug,
+        content: data.content,
+        _id: data._id
+    };
+
+    return isUpdate ? postUpdate : post;
 }
 
 module.exports = {
-    index: async (req, res) => {
+    index: async(req, res) => {
         let { action, id } = req.params;
         if (action) {
 
             if (id && action === 'edit') {
                 let post = await Post.detail(id);
-                res.render(admin_view + 'pages/add-post', { title: 'Edit', post })
+                res.render(admin_view + 'pages/add-post', { title: 'Edit', btnName: 'Update', className: 'btn-submit update', post })
             } else {
-
-                res.render(admin_view + 'pages/add-post', { title: 'Add new', post: {} })
+                res.render(admin_view + 'pages/add-post', { title: 'Add new', btnName: 'Create', className: 'btn-submit create', post: {} })
             }
         } else {
             let { page = 1 } = req.query;
@@ -24,9 +52,9 @@ module.exports = {
             res.render(admin_view + 'pages/post', { post: data, paginate })
         }
     },
-    post: async (req, res) => {
+    post: async(req, res) => {
         let { body } = req;
-        let data = validate(body);
+        let data = validate(body, true);
         let { _id } = data;
         delete data._id;
 
@@ -35,7 +63,28 @@ module.exports = {
         if (result.value) {
             res.json({ success: true })
         } else {
-            res.json({ success: false, message: 'Đã xẩy ra lỗi trong quá trình update' })
+            res.json({ success: false, message: 'There are some errors when you update!' })
+        }
+    },
+    add: async(req, res) => {
+        let { body } = req;
+        let data = validate(body);
+        let result = await Post.add(data);
+        if (result.ops[0]) {
+            res.json({ success: true });
+        } else {
+            res.json({ success: false, message: 'There are some errors when you add new!' })
+        }
+    },
+    delete: async(req, res) => {
+        const { id } = req.params;
+        let result = await Post.delete(id);
+        if (result.deletedCount === 1) {
+            let { page = 1 } = req.query;
+            let { data, paginate } = await Post.list(page);
+            res.json({ success: true, post: data, paginate });
+        } else {
+            res.json({ success: false, message: 'There are some errors when you delete a post!' })
         }
     }
 }

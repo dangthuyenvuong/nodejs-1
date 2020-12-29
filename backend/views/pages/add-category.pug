@@ -1,0 +1,24 @@
+extends ../layout/master
+
+block content
+    h1 #{title}
+    .main-card.mb-3.card
+        .card-body
+            //- h5.card-title Bootstrap 4 Form Validation
+            form.needs-validation
+                input.form-control(type="hidden" placeholder="Id" name="_id" value=category._id)
+                .form-group
+                    label Title
+                    input.form-control(type="text" placeholder="Title" name="title" value=category.title required='' onkeyup='changeSlug()')
+                    .title.invalid-feedback
+                .form-group
+                    label Slug
+                    input.form-control(type="text" placeholder="Slug" name="slug" value=category.slug required='')
+                    .slug.invalid-feedback
+                    
+                button.mb-2.mr-2.btn.btn-secondary(type='submit' class="btn-back") Back
+                button.mb-2.mr-2.btn.btn-primary(type='submit' class=className) #{btnName}
+                .show-noti
+
+block js
+    script(src="/backend/category.js")

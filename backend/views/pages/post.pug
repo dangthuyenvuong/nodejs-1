@@ -5,6 +5,8 @@ block content
     .main-card.mb-3.card
         .card-body
             h5.card-title Danh sách bài post
-            +dataTable(post, ['slug', 'title', 'cover'])
-
+            +dataTable(post, ['slug', 'title', 'cover'], '/admin/post/edit/')
+        .show-noti
+    script(src="/jquery.min.js")
+    script(src="/backend/post.js")
 

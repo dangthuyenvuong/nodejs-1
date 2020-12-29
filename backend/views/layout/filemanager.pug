@@ -1,0 +1,82 @@
+link(rel='stylesheet' type='text/css' href='/backend/filemanager/bootstrap/css/bootstrap.css')
+link(rel='stylesheet' type='text/css' href='/backend/filemanager/font-awesome/css/font-awesome.min.css')
+script(type='text/javascript' src='/backend/filemanager/js/jquery-1.10.2.min.js')
+script(type='text/javascript' src='/backend/filemanager/bootstrap/js/bootstrap.min.js')
+
+.filemanager.popup-media-wraper(style="display: none")
+    .container.pb-filemng-template
+        .row
+            .col-md-12
+                //- nav.navbar.navbar-default.pb-filemng-navbar
+                //-     .container-fluid
+                //-         // Navigation
+                //-         .navbar-header
+                //-             button.pull-left.navbar-toggle.collapsed.treeview-toggle-btn(type='button' data-toggle='collapse' data-target='#treeview-toggle' aria-expanded='false')
+                //-                 span.sr-only Toggle navigation
+                //-                 span.icon-bar
+                //-                 span.icon-bar
+                //-                 span.icon-bar
+                //-             button.navbar-toggle.collapsed(type='button' data-toggle='collapse' data-target='#options' aria-expanded='false')
+                //-                 span.sr-only Toggle navigation
+                //-                 span.fa.fa-gears
+                //-             // Search button
+                //-             button.navbar-toggle.collapsed(type='button' data-toggle='collapse' data-target='#pb-filemng-navigation' aria-expanded='false')
+                //-                 span.sr-only Toggle navigation
+                //-                 span.fa.fa-share
+                //-         ul#options.collapse.navbar-collapse.nav.navbar-nav.navbar-right
+                //-             li
+                //-                 a(href='#')
+                //-                     span.fa.fa-crosshairs.fa-lg
+                //-             li
+                //-                 a(href='#')
+                //-                     span.fa.fa-ellipsis-v.fa-lg
+                //-             li
+                //-                 a(href='#')
+                //-                     span.fa.fa-lg.fa-server
+                //-             li
+                //-                 a(href='#')
+                //-                     span.fa.fa-lg.fa-minus
+                //-             li
+                //-                 a(href='#')
+                //-                     span.fa.fa-lg.fa-window-maximize
+                //-             li
+                //-                 a(href='#')
+                //-                     span.fa.fa-lg.fa-times
+                //-         // Collect the nav links, forms, and other content for toggling
+                //-         #pb-filemng-navigation.collapse.navbar-collapse
+                //-             ul.nav.navbar-nav
+                //-                 li
+                //-                     a(href='#')
+                //-                         span.fa.fa-chevron-left.fa-lg
+                //-                 li
+                //-                     a(href='#')
+                //-                         span.fa.fa-chevron-right.fa-lg
+                //-                 li.pb-filemng-active
+                //-                     a(href='#')
+                //-                         span.fa.fa-file.fa-lg
+                //-         // /.navbar-collapse
+                //-         // /.container-fluid
+                .panel.panel-default
+                    .panel-body.pb-filemng-panel-body
+                        .row
+                            .col-sm-3.col-md-4.pb-filemng-template-treeview
+                                #treeview-toggle.collapse.navbar-collapse
+                                    #treeview
+                                        //- ul
+                                        //-     li Avatar
+                                        //-         ul
+                                        //-             li People
+                                        //-             li People2
+                                        //-     li Post
+                            .col-sm-9.col-md-8.pb-filemng-template-body
+        .filemanager-close X
+
+link(rel="stylesheet" href="/backend/filemanager.css")
+// you need to include the shieldui css and js assets in order for the charts to work
+link(rel='stylesheet' type='text/css' href='http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css')
+script(type='text/javascript' src='http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js')
+script(type='text/javascript' src='http://www.prepbootstrap.com/Content/data/fileManagerData.js')
+script.
+    dataSrc = !{JSON.stringify(filemanager.dir)}
+
+script(type="text/javascript" src="/backend/filemanager.js")

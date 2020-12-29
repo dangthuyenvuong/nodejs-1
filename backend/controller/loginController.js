@@ -2,10 +2,8 @@ const Admin = require('../models/Admin')
 
 module.exports = {
 
-    login: async (req, res, next) => {
-
+    login: async(req, res, next) => {
         if (req.method == "GET") {
-
             res.render(admin_view + 'pages/login')
 
         } else {
@@ -21,10 +19,8 @@ module.exports = {
                 res.json({ success: false, message: 'Vui lòng nhập đúng email và password' })
             }
         }
-        console.log('login')
-
     },
-    logout: (req, res,) => {
+    logout: (req, res, ) => {
         res.clearCookie('login')
         res.redirect('/admin/login')
     }

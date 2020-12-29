@@ -1,4 +1,4 @@
-mixin dataTable(data, heading)
+mixin dataTable(data, heading, url)
     table.mb-0.table.table-hover
         thead
             tr
@@ -9,22 +9,30 @@ mixin dataTable(data, heading)
             each item, index in data
                 tr
                     th(scope='row') 
-                        a(href=`/admin/post/edit/${item._id}`) #{index + 1}
+                        a(href=`${url}${item._id}`) #{index + 1}
                     each field in heading
                         if field === 'cover'
                             td 
                                 img(src=item[field] style="width: 100px; height: 100px; object-fit: contain;")
                         else
                             td #{item[field]}
+                    td
+                        .font-icon-wrapper(onclick=`goToDelete('${item._id}')`)
+                            i.pe-7s-trash
 
     nav(aria-label='Page navigation example')
         ul.pagination
             li.page-item
+
             if paginate.previousPage
                 a.page-link(href=`?page=${paginate.previousPage}` aria-label='Previous')
                     span(aria-hidden='true') &laquo;
                     span.sr-only Previous
-            - for(let i = 1; i <= paginate.totalPage; i++)
+            
+            - for(let i = paginate.currentPage - 2 > 0 ? paginate.currentPage - 2 : 1; i <= paginate.currentPage; i++)
+                li.page-item(class= i == paginate.currentPage ? 'active' : '')
+                    a.page-link(href=`?page=${i}`) #{i}
+            - for(let i = paginate.currentPage + 1; i <= paginate.currentPage + 2 &&  i <= paginate.totalPage; i++)
                 li.page-item(class= i == paginate.currentPage ? 'active' : '')
                     a.page-link(href=`?page=${i}`) #{i}
 

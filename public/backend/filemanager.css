@@ -1,0 +1,134 @@
+.popup-media-wraper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .7);
+    z-index: 10000;
+    min-width: 100vw;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    position: relative;
+}
+
+.pb-filemng-template-body img {
+    height: 100px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.filemanager .panel-body {
+    min-height: 50vh;
+}
+
+#treeview ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+#treeview ul i {
+    margin-right: 5px;
+}
+
+.filemanager-close {
+    position: absolute;
+    top: -25px;
+    right: -7px;
+    background: white;
+    opacity: 1;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.pb-filemng-template {
+    margin-top: 40px;
+    font-family: 'Sansita', sans-serif;
+    position: relative;
+}
+
+.pb-filemng-navbar {
+    margin-bottom: 0;
+}
+
+.treeview-toggle-btn {
+    margin-left: 15px;
+}
+
+.pb-filemng-template-btn {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: gray;
+    padding: 0px 13px 0px 13px;
+}
+
+.pb-filemng-active {
+    border-bottom: 2px solid #6d97db;
+    color: #5f6977;
+}
+
+.pb-filemng-template-btn:hover {
+    color: blue;
+}
+
+.pb-filemng-body-folders>img:hover {
+    cursor: pointer;
+}
+
+.btn-align {
+    margin-top: 7px;
+}
+
+.pb-filemng-template-treeview {
+    border-right: 1px solid gray;
+}
+
+.pb-filemng-folder {
+    color: orange;
+    padding-bottom: 3px;
+}
+
+.pb-filemng-paragraphs {
+    margin-top: -20px;
+    text-align: center;
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+
+    .pb-filemng-template-treeview {
+        border-right: none;
+    }
+
+    #options {
+        text-align: center;
+    }
+
+    #options>li {
+        display: inline-block;
+    }
+
+    #pb-filemng-navigation>ul {
+        text-align: center;
+    }
+
+    #pb-filemng-navigation>ul>li {
+        display: inline-block;
+    }
+
+}
