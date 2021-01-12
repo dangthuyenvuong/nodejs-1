@@ -69,13 +69,23 @@ script(type='text/javascript' src='/backend/filemanager/bootstrap/js/bootstrap.m
                                         //-             li People2
                                         //-     li Post
                             .col-sm-9.col-md-8.pb-filemng-template-body
+                    .action
+                        .left
+                            .btn.btn-primary.btn-add-folder Add Folder
+                            .btn.btn-danger.btn-delete-folder(style="display: none") Delete Folder
+                            .btn.btn-warning.btn-rename-folder(style="display: none") Rename Folder
+                        .right(style="margin-left: auto;")
+                            .btn.btn-primary.btn-filemanager-upload Upload
+                            input(type="file" style="display: none" id="filemanager-input")
+                            .btn.btn-success.btn-file-select(style="display: none") Select
+                            .btn.btn-warning.btn-file-delete(style="display: none") Delete
         .filemanager-close X
 
 link(rel="stylesheet" href="/backend/filemanager.css")
 // you need to include the shieldui css and js assets in order for the charts to work
-link(rel='stylesheet' type='text/css' href='http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css')
-script(type='text/javascript' src='http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js')
-script(type='text/javascript' src='http://www.prepbootstrap.com/Content/data/fileManagerData.js')
+link(rel='stylesheet' type='text/css' href='/backend/filemanager/all.min.css')
+script(type='text/javascript' src='/backend/filemanager/shieldui-all.min.js')
+script(type='text/javascript' src='/backend/filemanager/fileManagerData.js')
 script.
     dataSrc = !{JSON.stringify(filemanager.dir)}
 

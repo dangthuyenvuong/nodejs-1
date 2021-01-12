@@ -27,10 +27,13 @@ var url = "mongodb://localhost:27017";
 // room : people [user1, user2]
 
 
-// admin : name, email, birthday, avatar, gender, rule
+// admin : name, email, birthday, avatar, gender, rule, account_type : ('admin', 'editor',...)
+
+// groupAdmin các loại tài khoản
+// groupAdmin: title: (Admin, Editor, Super Admin, Viết bài, ...), key: ('admin', 'editor', 'reporter',...), rule: []
 
 
-let postCollection, userCollection, tagCollection, categoryCollection, commentCollection, messageCollection, roomCollection, adminCollection;
+let postCollection, userCollection, tagCollection, categoryCollection, commentCollection, messageCollection, roomCollection, adminCollection, groupAdminCollection;
 
 
 MongoClient.connect(url, { useUnifiedTopology: true }, (err, db) => {
@@ -62,6 +65,9 @@ MongoClient.connect(url, { useUnifiedTopology: true }, (err, db) => {
         messageCollection = database.collection('message');
         roomCollection = database.collection('room');
 
+
+        // -------------
+        groupAdminCollection = database.collection('group_admin');
 
 
         // let userCollection = database.collection('user');
@@ -152,7 +158,9 @@ module.exports = function (name) {
         Comment: commentCollection,
         Message: messageCollection,
         Room: roomCollection,
-        Admin: adminCollection
+        Admin: adminCollection,
+
+        GroupAdmin: groupAdminCollection
     }
 
     return object[name] || null

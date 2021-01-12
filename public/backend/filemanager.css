@@ -109,6 +109,33 @@ body {
     margin: 0 auto;
 }
 
+.pb-filemng-template-body .pb-filemng-body-folders.selected .wrap {
+    border: 2px solid #00c4ff;
+}
+
+#treeview li {
+    padding: 0 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#treeview ul {
+    width: 100%;
+}
+
+#treeview li a {
+    flex: 1;
+    padding: 0 5px;
+}
+
+#treeview li a.selected {
+    background: #ececec;
+}
+
+.filemanager .action {
+    display: flex;
+}
+
 @media screen and (max-width: 767px) {
 
     .pb-filemng-template-treeview {

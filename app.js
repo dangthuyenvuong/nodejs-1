@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const fileUpload = require('express-fileupload');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -10,6 +11,9 @@ const pageRouter = require('./routes/page');
 const postRouter = require('./routes/post');
 
 const mongodb = require('./core/mongodb');
+
+let backend = require('./backend/router');
+const { getAdminFromID } = require('./backend/models/Admin');
 
 var app = express();
 
@@ -30,7 +34,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(fileUpload({
+  createParentPath: true
+}))
 
 
 
@@ -44,16 +50,22 @@ app.use('/test', require('./routes/test'));
 
 // backend
 
-function adminMiddleware(req, res, next) {
+async function adminMiddleware(req, res, next) {
   let { path } = req;
   let { login } = req.cookies;
 
   if (login) {
     req.login = JSON.parse(login)
+
+    let user = await getAdminFromID(req.login._id);
+    req.login = user
+
     res.locals.login = req.login
     res.locals.path = path;
     // console.log(path)
   }
+
+  console.log(req.login)
 
   if (path === '/login') {
 
@@ -73,7 +85,7 @@ function adminMiddleware(req, res, next) {
 
 }
 
-let backend = require('./backend/router');
+
 
 app.use('/admin', adminMiddleware, backend.middleware, backend.router);
 

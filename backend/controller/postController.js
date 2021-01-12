@@ -34,7 +34,7 @@ function validate(data, isUpdate = false) {
 }
 
 module.exports = {
-    index: async(req, res) => {
+    index: async (req, res) => {
         let { action, id } = req.params;
         if (action) {
 
@@ -52,7 +52,13 @@ module.exports = {
             res.render(admin_view + 'pages/post', { post: data, paginate })
         }
     },
-    post: async(req, res) => {
+    list: async (req, res) => {
+        let { page = 1 } = req.query;
+        let { data, paginate } = await Post.list(page);
+        console.log(paginate)
+        res.render(admin_view + 'pages/post', { post: data, paginate })
+    },
+    post: async (req, res) => {
         let { body } = req;
         let data = validate(body, true);
         let { _id } = data;
@@ -66,7 +72,10 @@ module.exports = {
             res.json({ success: false, message: 'There are some errors when you update!' })
         }
     },
-    add: async(req, res) => {
+    add: async (req, res) => {
+        if (req.method === "GET") {
+            return res.render(admin_view + 'pages/add-post', { title: 'Edit', btnName: 'Update', className: 'btn-submit update', post: {} })
+        }
         let { body } = req;
         let data = validate(body);
         let result = await Post.add(data);
@@ -76,7 +85,7 @@ module.exports = {
             res.json({ success: false, message: 'There are some errors when you add new!' })
         }
     },
-    delete: async(req, res) => {
+    delete: async (req, res) => {
         const { id } = req.params;
         let result = await Post.delete(id);
         if (result.deletedCount === 1) {
