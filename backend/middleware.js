@@ -3,7 +3,6 @@ const mongodb = require("../core/mongodb");
 let menus = [
     {
         title: 'DASHBOARDS',
-        permission: 'reporter',
         subs: [
             {
                 title: 'General',
@@ -21,7 +20,7 @@ let menus = [
                 title: 'Post',
                 icon: 'metismenu-icon pe-7s-diamond',
                 link: '/post',
-                permission: 'editor|reporter',
+                // permission: 'editor|reporter',
                 subs: [
                     {
                         title: 'Thêm mới',
@@ -169,32 +168,48 @@ function menuLevel3(e, login) {
 
 }
 
-function permissionMenu(e, login, parentPermission = false) {
+function permissionMenu(e, login) {
 
-    if (parentPermission) return e;
 
+
+    // Kiểm tra nếu là admin thì trả về luôn
     if (login.account_type === 'admin') return e;
-    let permission = e.permission || ''
 
-    permission = permission.split('|')
-    if (e.subs) {
-        e.subs = e.subs.map(e1 => permissionMenu(e1, login, permission.includes(login.account_type)))
-        e.subs = e.subs.filter(e1 => e1 !== undefined)
+    // Nếu là Array thì loop từng element con
+    if (Array.isArray(e)) {
 
-        if (e.subs.length === 0) {
-            delete e.subs;
-        }
+        let menus = e.map(e => permissionMenu(e, login))
+        menus = menus.filter(e => Boolean(e))
+
+        return menus;
     }
 
-    if (Array.isArray(e.subs) || permission.includes(login.account_type)) {
-        // if (e.subs) {
-        //     e.subs = e.subs.map(e1 => permissionMenu(e1, login))
-        //     e.subs = e.subs.filter(e1 => e1 !== undefined)
-        // }
+    let permission = e.permission
 
-        return e
+    if (permission) {
+        permission = permission.split('|')
+    } else {
+        permission = []
+    }
+
+    if (Array.isArray(e.subs)) {
+        e.subs = e.subs.map(e => permissionMenu(e, login))
+        e.subs = e.subs.filter(e => Boolean(e))
+
+        if (e.subs.length === 0) delete e.subs;
+
+        if (permission.length === 0) return e
+
+        if (permission.includes(login.account_type)) return e
+
+        return undefined;
 
     }
+
+    if (permission.length === 0) return e
+
+    if (permission.includes(login.account_type)) return e
+
     return undefined;
 }
 
@@ -214,15 +229,20 @@ module.exports = (rule) => {
 
         let menuPermission = JSON.parse(JSON.stringify(menus))
 
+        menuPermission = permissionMenu(menuPermission, login);
+
         // menuPermission = menuPermission.map(e => permissionMenu(e, login))
+        console.log(menuPermission)
 
-        menuPermission = menuPermission.map(e => menuLevel1(e, login))
+        // menuPermission = menuPermission.map(e => menuLevel1(e, login))
 
-        menuPermission = menuPermission.filter(e => e !== undefined)
+        // menuPermission = menuPermission.filter(e => e !== undefined)
 
-        menuPermission = menuPermission.filter(e => e.subs.length > 0)
+        // menuPermission = menuPermission.filter(e => e.subs.length > 0)
 
         res.locals.menus = menuPermission
+
+        // return res.json(menuPermission)
 
         let groupAdmin = await mongodb('GroupAdmin').findOne({ key: login.account_type })
 

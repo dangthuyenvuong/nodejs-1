@@ -2,18 +2,19 @@
     .app-sidebar__inner
         ul.vertical-nav-menu
             each item in menus
-                li.app-sidebar__heading #{item.title}
-                if(item.subs)
-                    each menu in item.subs
-                        li(class=(new RegExp(menu.link)).test(path) ? 'mm-active': '')
-                            a(href=menu.link ? menu.link : '#' class=(new RegExp(menu.link)).test(path) ? 'mm-active': '')
-                                i(class=menu.icon)
-                                | #{menu.title}
-                            if(menu.subs)
-                                ul
-                                    each menuLevel2 in menu.subs
-                                        li
-                                            a(href=menuLevel2.link class= path === menuLevel2.link ? 'mm-active': '')
-                                                i.metismenu-icon
-                                                | #{menuLevel2.title}
+                if item.subs && item.subs.length > 0
+                    li.app-sidebar__heading #{item.title}
+                    if(item.subs)
+                        each menu in item.subs
+                            li(class=(new RegExp(menu.link)).test(path) ? 'mm-active': '')
+                                a(href=menu.link ? menu.link : '#' class=(new RegExp(menu.link)).test(path) ? 'mm-active': '')
+                                    i(class=menu.icon)
+                                    | #{menu.title}
+                                if(menu.subs)
+                                    ul
+                                        each menuLevel2 in menu.subs
+                                            li
+                                                a(href=menuLevel2.link class= path === menuLevel2.link ? 'mm-active': '')
+                                                    i.metismenu-icon
+                                                    | #{menuLevel2.title}
 
