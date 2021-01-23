@@ -4,8 +4,8 @@ const mongodb = require('mongodb')
 const MongoClient = mongodb.MongoClient
 // const ObjectID = mongodb.ObjectID
 
-var url = "mongodb://localhost:27017";
-// var url = "mongodb+srv://dangthuyenvuong_nodejs:dangthuyenvuong_nodejs@cluster0.ticyv.mongodb.net/";
+// var url = "mongodb://localhost:27017";
+var url = "mongodb+srv://dangthuyenvuong_nodejs:dangthuyenvuong_nodejs@cluster0.ticyv.mongodb.net/";
 
 // post: title, description, content, published_at, created_at, updated_at, cover, time_read, tags, categories, author (user), slug, feature, trending, highlight
 // user: name, email, birthday, avatar, gender, type: author | user
