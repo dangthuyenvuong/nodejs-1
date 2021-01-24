@@ -7,7 +7,12 @@
 var app = require('../app');
 var debug = require('debug')('myapp:server');
 var http = require('http');
+const hook = require('../core/hook');
 require('dotenv').config();
+
+
+require('../plugins/messenger')
+require('../plugins/socket')
 
 /**
  * Get port from environment and store in Express.
@@ -22,7 +27,7 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
-require('../core/socket')(server)
+hook.doHook('www', server)
 /**
  * Listen on provided port, on all network interfaces.
  */

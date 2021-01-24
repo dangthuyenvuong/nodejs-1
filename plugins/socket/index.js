@@ -1,9 +1,27 @@
-const { ObjectID } = require('mongodb')
-const mongodb = require('./mongodb')
+const hook = require("../../core/hook");
+let socket = require('socket.io')
+const { ObjectID } = require('mongodb');
+const mongodb = require("../../core/mongodb");
 
 
-module.exports = (http) => {
-    let io = require('socket.io')(http)
+
+hook.addHook('admin-menu', (menus) => {
+    menus[2].subs.push({
+        title: 'Socket Setting',
+        icon: 'metismenu-icon pe-7s-diamond',
+        link: '/admin/messenger'
+    })
+})
+
+
+hook.addHook('frontend-js', () => {
+    return `<script src="/socket.io/socket.io.js"></script><script src="/chat/script.js"></script>`
+})
+
+
+
+function init(http) {
+    let io = socket(http)
 
     io.on('connection', socket => {
 
@@ -82,3 +100,5 @@ module.exports = (http) => {
         })
     })
 }
+
+hook.addHook('www', init)

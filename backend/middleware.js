@@ -1,5 +1,5 @@
 const mongodb = require("../core/mongodb");
-
+const hook = require('../core/hook')
 let menus = [
     {
         title: 'DASHBOARDS',
@@ -84,7 +84,7 @@ let menus = [
     },
     {
         title: 'SYSTEM MANAGEMENT',
-        permission: 'admin',
+        // permission: 'admin',
         subs: [
             {
                 title: 'Media',
@@ -108,7 +108,7 @@ let menus = [
 function permissionMenu(e, login) {
 
     // Kiểm tra nếu là admin thì trả về luôn
-    // if (login.account_type === 'admin') return e;
+    if (login.account_type === 'admin') return e;
 
     // Nếu là Array thì loop từng element con
     if (Array.isArray(e)) {
@@ -163,6 +163,9 @@ module.exports = (rule) => {
         let { login } = req;
 
         let menuPermission = JSON.parse(JSON.stringify(menus))
+
+
+        hook.doHook('admin-menu', menuPermission)
 
         menuPermission = permissionMenu(menuPermission, login);
 

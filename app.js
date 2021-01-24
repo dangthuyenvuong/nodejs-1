@@ -10,13 +10,19 @@ var usersRouter = require('./routes/users');
 const pageRouter = require('./routes/page');
 const postRouter = require('./routes/post');
 
+
+
 const mongodb = require('./core/mongodb');
 
 let backend = require('./backend/router');
 const { getAdminFromID } = require('./backend/models/Admin');
+const hook = require('./core/hook');
 
 var app = express();
 
+
+
+app.locals.hook = hook
 app.locals.convertTimeToDate = (time) => {
   var date = new Date(time);
   return date.getDate() + ' Tháng ' + date.getMonth() + ', ' + date.getFullYear()
@@ -105,5 +111,15 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+
+
+
+// function loadPlugin() {
+//   import('./plugins/messenger/index.js')
+// }
+
+// loadPlugin();
 
 module.exports = app;
