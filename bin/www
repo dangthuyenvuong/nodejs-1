@@ -12,7 +12,8 @@ require('dotenv').config();
 
 
 require('../plugins/messenger')
-require('../plugins/socket')
+require('../plugins/backtotop')
+// require('../plugins/socket')
 
 /**
  * Get port from environment and store in Express.

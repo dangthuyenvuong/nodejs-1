@@ -25,7 +25,10 @@ router.get('/logout', loginController.logout);
 router.all('/post/add-new', adminMiddleware('post-add'), postController.add);
 router.delete('/post/:id', adminMiddleware('post-detail'), postController.add);
 router.get('/post', adminMiddleware('post-list'), postController.list);
+router.get('/post/add', adminMiddleware('post-add'), postController.add);
 // router.get('/post/:action?/:id?', adminMiddleware('post-add'), postController.add);
+
+
 
 
 
@@ -42,13 +45,13 @@ router.post('/tag', adminMiddleware('supper-admin'), tagController.post);
 
 
 // Media
-router.post('/media-list-file', adminMiddleware('supper-admin'), mediaController.index)
-router.post('/filemanager-upload', adminMiddleware('supper-admin'), mediaController.upload)
-router.post('/filemanager-delete', adminMiddleware('supper-admin'), mediaController.delete)
+router.post('/media-list-file', adminMiddleware('media'), mediaController.index)
+router.post('/filemanager-upload', adminMiddleware('media'), mediaController.upload)
+router.post('/filemanager-delete', adminMiddleware('media'), mediaController.delete)
 
-router.post('/filemanager-add-folder', adminMiddleware('supper-admin'), mediaController.addFolder)
-router.post('/filemanager-rename-folder', adminMiddleware('supper-admin'), mediaController.renameFolder)
-router.post('/filemanager-delete-folder', adminMiddleware('supper-admin'), mediaController.deleteFolder)
+router.post('/filemanager-add-folder', adminMiddleware('media'), mediaController.addFolder)
+router.post('/filemanager-rename-folder', adminMiddleware('media'), mediaController.renameFolder)
+router.post('/filemanager-delete-folder', adminMiddleware('media'), mediaController.deleteFolder)
 
 
 
