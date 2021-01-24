@@ -1,3 +1,4 @@
-# SocketIO
-## 1. SocketIO cơ bản: chat, realtime
-## 2. Database
+# cài đặt giao diện admin phân quyền
+# danh sách user
+# danh sách quyền
+

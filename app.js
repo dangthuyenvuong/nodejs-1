@@ -65,8 +65,6 @@ async function adminMiddleware(req, res, next) {
     // console.log(path)
   }
 
-  console.log(req.login)
-
   if (path === '/login') {
 
     if (login) {

@@ -55,7 +55,6 @@ module.exports = {
     list: async (req, res) => {
         let { page = 1 } = req.query;
         let { data, paginate } = await Post.list(page);
-        console.log(paginate)
         res.render(admin_view + 'pages/post', { post: data, paginate })
     },
     post: async (req, res) => {

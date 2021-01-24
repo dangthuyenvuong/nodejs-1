@@ -8,13 +8,13 @@ let menus = [
                 title: 'General',
                 icon: 'metismenu-icon pe-7s-rocket',
                 link: '/admin',
-                permission: 'reporter'
+                permission: 'report'
             }
         ]
     },
     {
         title: 'CONTENT MANAGEMENT',
-        permission: 'editor|reporter',
+        permission: 'content',
         subs: [
             {
                 title: 'Post',
@@ -25,12 +25,12 @@ let menus = [
                     {
                         title: 'Thêm mới',
                         link: '/admin/post/add-new',
-                        permission: 'editor',
+                        permission: 'post-add',
                     },
                     {
                         title: 'Danh sách',
                         link: '/admin/post',
-                        // permission: 'reporter',
+                        permission: 'post-list',
                     }
                 ]
             },
@@ -105,75 +105,10 @@ let menus = [
     }
 ]
 
-
-function menuLevel1(e, login) {
-    if (login.account_type === 'admin') return e;
-
-    e.subs = e.subs.map(e1 => menuLevel2(e1, login))
-    e.subs = e.subs.filter(e1 => e1 !== undefined)
-
-    if (Array.isArray(e.subs) && e.subs.length > 0) {
-        return e;
-    }
-
-    let permission = e.permission || false
-
-    if (permission) {
-        permission = permission.split('|')
-        if (permission.includes(login.account_type)) return e;
-        return undefined
-    }
-
-    return undefined;
-}
-
-function menuLevel2(e, login) {
-
-    let permission = e.permission || false
-
-    if (permission) {
-        permission = permission.split('|')
-        if (permission.includes(login.account_type)) return e;
-        return undefined
-    }
-
-
-
-    if (Array.isArray(e.subs)) {
-        e.subs = e.subs.map(e1 => menuLevel3(e1, login))
-
-        e.subs = e.subs.filter(e1 => e1 !== undefined)
-    }
-
-    if (Array.isArray(e.subs) && e.subs.length > 0) {
-        return e;
-    }
-
-}
-
-function menuLevel3(e, login) {
-    let permission = e.permission || false
-
-    if (permission) {
-        permission = permission.split('|')
-
-        if (permission.includes(login.account_type)) return e;
-
-
-        return undefined
-    }
-
-    return e
-
-
-}
-
 function permissionMenu(e, login) {
 
-
-
     // Kiểm tra nếu là admin thì trả về luôn
-    if (login.account_type === 'admin') return e;
+    // if (login.account_type === 'admin') return e;
 
     // Nếu là Array thì loop từng element con
     if (Array.isArray(e)) {
@@ -184,13 +119,13 @@ function permissionMenu(e, login) {
         return menus;
     }
 
-    let permission = e.permission
+    let permission = e.permission || false
 
-    if (permission) {
-        permission = permission.split('|')
-    } else {
-        permission = []
-    }
+    // if (permission) {
+    //     permission = permission.split('|')
+    // } else {
+    //     permission = []
+    // }
 
     if (Array.isArray(e.subs)) {
         e.subs = e.subs.map(e => permissionMenu(e, login))
@@ -200,15 +135,15 @@ function permissionMenu(e, login) {
 
         if (permission.length === 0) return e
 
-        if (permission.includes(login.account_type)) return e
+        if (!permission || login.rule.includes(permission)) return e
 
         return undefined;
 
     }
 
-    if (permission.length === 0) return e
+    // if (permission.length === 0) return e
 
-    if (permission.includes(login.account_type)) return e
+    if (!permission || login.rule.includes(permission)) return e
 
     return undefined;
 }
@@ -232,7 +167,6 @@ module.exports = (rule) => {
         menuPermission = permissionMenu(menuPermission, login);
 
         // menuPermission = menuPermission.map(e => permissionMenu(e, login))
-        console.log(menuPermission)
 
         // menuPermission = menuPermission.map(e => menuLevel1(e, login))
 
@@ -244,9 +178,8 @@ module.exports = (rule) => {
 
         // return res.json(menuPermission)
 
-        let groupAdmin = await mongodb('GroupAdmin').findOne({ key: login.account_type })
 
-        if (login.account_type !== 'admin' && rule && !groupAdmin.rule.includes(rule)) {
+        if (!(!rule || login.rule.includes(rule))) {
             return res.json({ 'error': 'Bạn không có quyền truy cập vào trang này' })
         }
 
